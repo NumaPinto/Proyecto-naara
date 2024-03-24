@@ -8,44 +8,83 @@
 </head>
 <body>
     <header>
-        <h1>Salón de Belleza</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Salón de Belleza</h1>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="inicio">
-        <h2>Bienvenido a nuestro Salón de Belleza</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet dolor ut nisl iaculis, ac lacinia urna lobortis.</p>
+    <section id="inicio" class="hero">
+        <div class="container">
+            <h2>Bienvenido a nuestro Salón de Belleza</h2>
+            <p>Experimenta la excelencia en servicios de belleza con nosotros.</p>
+            <a href="#contacto" class="btn">Reserva ahora</a>
+        </div>
     </section>
 
-    <section id="servicios">
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Corte de cabello</li>
-            <li>Coloración</li>
-            <li>Maquillaje</li>
-            <li>Manicura y Pedicura</li>
-            <!-- Puedes añadir más servicios aquí -->
-        </ul>
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="service">
+                <h3>Corte de Cabello</h3>
+                <p>Desde cortes clásicos hasta las últimas tendencias. Déjate sorprender por nuestro equipo de estilistas expertos.</p>
+            </div>
+            <div class="service">
+                <h3>Coloración</h3>
+                <p>Transforma tu look con nuestra gama de colores. Nuestros profesionales te asesorarán para encontrar el tono perfecto para ti.</p>
+            </div>
+            <div class="service">
+                <h3>Maquillaje</h3>
+                <p>Resalta tu belleza natural con nuestro maquillaje profesional. Ya sea para una ocasión especial o para el día a día, nosotros te ayudamos a lucir radiante.</p>
+            </div>
+            <div class="service">
+                <h3>Manicura y Pedicura</h3>
+                <p>Mima tus manos y pies con nuestros tratamientos de manicura y pedicura. Disfruta de un momento de relajación mientras cuidamos de tu belleza.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Ponte en contacto con nosotros para reservar tu cita.</p>
-        <address>
-            Dirección: Calle Principal, Ciudad, País<br>
-            Teléfono: 123-456-7890<br>
-            Email: info@salondebelleza.com
-        </address>
+    <section id="galeria" class="gallery">
+        <div class="container">
+            <h2>Galería</h2>
+            <div class="gallery-images">
+                <img src="images/gallery1.jpg" alt="Galería 1" onclick="openModal('gallery1.jpg')">
+                <img src="images/gallery2.jpg" alt="Galería 2" onclick="openModal('gallery2.jpg')">
+                <img src="images/gallery3.jpg" alt="Galería 3" onclick="openModal('gallery3.jpg')">
+                <!-- Agrega más imágenes de la galería aquí -->
+            </div>
+            <div id="modal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <img id="modal-image" class="modal-content" alt="Galería">
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>Ponte en contacto con nosotros para reservar tu cita.</p>
+            <address>
+                Dirección: Calle Principal, Ciudad, País<br>
+                Teléfono: 123-456-7890<br>
+                Email: info@salondebelleza.com
+            </address>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Salón de Belleza. Todos los derechos reservados.</p>
+        <div class="container">
+            <p>&copy; 2024 Salón de Belleza. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
