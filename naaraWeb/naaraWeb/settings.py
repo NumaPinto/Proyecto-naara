@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-STATICFILES_DIRS = ['C:/Users/Soy Exitoso/Desktop/naaraWeb/naaraWeb/plantillas/static']
+STATICFILES_DIRS = ['C:/Users/Hp/Desktop/Proyecto-naara/naaraWeb/naaraWeb/plantillas/static']
 
 
 # Application definition
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'naaraWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:/Users/Soy Exitoso/Desktop/naaraWeb/naaraWeb/plantillas"], #Cargar todas las plantillas
+        'DIRS': ["C:/Users/Hp/Desktop/Proyecto-naara/naaraWeb/naaraWeb/plantillas"], #Cargar todas las plantillas
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
