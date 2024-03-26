@@ -1,14 +1,8 @@
 from django.contrib import admin
+from .models import Servicio, Producto, Reserva, Cliente
 
-from catalogo.models import Catalogo
-
-# Register your models here.
-
-class CatalogoAdministracion(admin.ModelAdmin):
-    list_display = ["nombre_articulo"]
-    search_fields = ["nombre_articulo"]
-    list_filter = ["nombre_articulo"]
-    #date_hierarchy ="fecha" #Para campos de fecha
+admin.site.register(Servicio)
+admin.site.register(Producto)
+admin.site.register(Reserva)
+admin.site.register(Cliente)
     
-
-admin.site.register(Catalogo,CatalogoAdministracion)
