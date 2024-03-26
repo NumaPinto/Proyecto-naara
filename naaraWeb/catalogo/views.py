@@ -1,35 +1,64 @@
 from django.shortcuts import render
+from django.views.generic import View
+
+#Vista basada en clase
+class Inicio(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"index.html")
+
+#Vista basada en clase
+class Inicio(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"index.html")
+
+#Vista basada en clase
+class Precio(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"price.html")
+    
+#Vista basada en clase
+class Servicio(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"service.html")
+    
+#Vista basada en clase
+class Appointment(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+          return render(request,"appointment.html")
+    
+#Vista basada en clase
+class Opening(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"opening.html")
+    
+#Vista basada en clase
+class Team(View):
+
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"team.html")
 
 
-def index(request):
+#Vista basada en clase
+class About(View):
 
-    return render(request,"index.html")
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+       return render(request,"about.html")
 
-def price(request):
+#Vista basada en clase
+class Contact(View):
 
-    return render(request,"price.html")
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"contact.html")
 
-def service(request):
+#Vista basada en clase
+class Testimonial(View):
 
-    return render(request,"service.html")
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+        return render(request,"testimonial.html")
 
-def appointment(request):
-
-    return render(request,"appointment.html")
-
-def opening(request):
-
-    return render(request,"opening.html")
-
-
-def team(request):
-
-    return render(request,"team.html")
-
-def about(request):
-
-    return render(request,"about.html")
-
-def contact(request):
-
-    return render(request,"contact.html")
