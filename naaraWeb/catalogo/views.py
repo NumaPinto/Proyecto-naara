@@ -105,7 +105,9 @@ class Inicio(TemplateView):
 
         informacion = InformacionPagina.objects.all()
 
-        resultado = {"datos":informacion}
+        informacion_servicio = Servicio.objects.all()
+
+        resultado = {"datos":informacion,"datos_servicio":informacion_servicio}
 
         return render(request,self.template_name,resultado)
 
