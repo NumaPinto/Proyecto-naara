@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
-from .models import Servicio, Producto, Reserva, Cliente
+from .models import Servicio, Producto, Reserva, Cliente,InformacionPagina
 from django.urls import reverse_lazy
 """from django.views.generic import View, TemplateView, ListView
 from catalogo.models import Catalogo
@@ -101,6 +101,14 @@ class Inicio(TemplateView):
 
     template_name = "index.html"
 
+    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+
+        informacion = InformacionPagina.objects.all()
+
+        resultado = {"datos":informacion}
+
+        return render(request,self.template_name,resultado)
+
 class About(TemplateView):
 
     template_name = "about.html"
@@ -132,6 +140,7 @@ class Contact(TemplateView):
 class Testimonial(TemplateView):
 
      template_name = "testimonial.html"
+
 
 class ServicioListView(ListView):
     model = Servicio

@@ -42,3 +42,10 @@ class Cliente(models.Model):
 
     def __str__(self):
         return f'{self.nombre_cliente} {self.apellido_cliente}'
+    
+class InformacionPagina(models.Model):
+    nombre_informacion = models.CharField(max_length=100)
+    acerca = models.TextField()
+    
+    def __str__(self):
+        return self.nombre_informacion

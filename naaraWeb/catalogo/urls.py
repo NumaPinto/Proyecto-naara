@@ -32,6 +32,7 @@ urlpatterns = [
     path('opening/', Opening.as_view(),name='opening'),
     path('team/', Team.as_view(),name='team'),
     path('testimonial/', Testimonial.as_view(),name='testimonial'),
+    
     # URLs para los servicios
     path('servicios/', ServicioListView.as_view(), name='servicio-list'),
     path('servicios/<int:pk>/', ServicioDetailView.as_view(), name='servicio-detail'),
