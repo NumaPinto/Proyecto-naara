@@ -152,9 +152,17 @@
                     <img class="img-fluid w-100" src="{% static 'img/about.jpg' %}" alt="">
                 </div>
                 <div class="col-lg-6">
+                    {%if datos%}
                     <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">{{ datos.0.nombre_informacion }}</h6>
+                    {%else%}
+                    <h6 class="d-inline-block text-primary text-uppercase bg-light py-1 px-2">Cargue el contenido por favor</h6>
+                    {%endif%}   
                     <h1 class="mb-4">Your Best Spa, Beauty & Skin Care Center</h1>
+                    {%if datos%}
                     <p class="pl-4 border-left border-primary">{{ datos.0.acerca }} </p>
+                    {%else%}
+                    <p class="pl-4 border-left border-primary">Cargue el contenido por favor </p>
+                    {%endif%} 
                     <div class="row pt-3">
                         <div class="col-6">
                             <div class="bg-light text-center p-4">
@@ -185,61 +193,116 @@
             </div>
         </div>
         <div class="owl-carousel service-carousel">
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="">
+            <div class="service-item position-relative">  
+                {%if datos_servicio%}
+                <img class="img-fluid" src="{% static  datos_servicio.0.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
+                    {%if datos_servicio%}
                     <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.0.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.0.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}" alt="">
+                {%if datos_servicio%}
+                <img class="img-fluid" src="{% static  datos_servicio.1.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
+                    {%if datos_servicio%}
                     <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.1.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.1.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="">
+
+                {%if datos_servicio %}
+                <img class="img-fluid" src="{% static  datos_servicio.2.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3"></h4>
+                    {%if datos_servicio %}
+                    <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.2.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.2.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
-                </div>{{ datos_servicio.2.nombre_servicio }}
+                </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="">
+                {%if datos_servicio%}
+                <img class="img-fluid" src="{% static  datos_servicio.3.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
+                    {%if datos_servicio%}
                     <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.3.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.3.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}" alt="">
+                {%if datos_servicio%}
+                <img class="img-fluid" src="{% static  datos_servicio.4.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
+                    {%if datos_servicio%}
                     <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.4.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.4.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}" alt="">
+                {%if datos_servicio%}
+                <img class="img-fluid" src="{% static  datos_servicio.5.imagen_servicio  %}" alt="">
+                {%else%}
+                <img class="img-fluid" src="" alt="">
+                {%endif%} 
                 <div class="service-text text-center">
+                    {%if datos_servicio%}
                     <h4 class="text-white font-weight-medium px-3">{{ datos_servicio.5.nombre_servicio }}</h4>
                     <p class="text-white px-3 mb-3">{{ datos_servicio.5.descripcion_servicio }}</p>
+                    {%else%}
+                    <h4 class="text-white font-weight-medium px-3">Cargue informacion</h4>
+                    <p class="text-white px-3 mb-3">Cargue informacion</p>
+                    {%endif%} 
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
@@ -250,7 +313,60 @@
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 class="text-white text-center mb-4">Make Appointment</h1>
-                    <form>
+                    
+                    <form method="post" action="{% url 'make_appointment' %}">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="name" class="form-control bg-transparent p-4" placeholder="Your Name" required="required" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control bg-transparent p-4" placeholder="Your Email" required="required" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="date" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Date" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input type="text" name="time" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Select Time" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <select name="service" class="custom-select bg-transparent px-4" style="height: 47px;">
+                                        <option selected>Select A Service</option>
+                                        <option value="1">Service 1</option>
+                                        <option value="2">Service 1</option>
+                                        <option value="3">Service 1</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px;">Make Appointment</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <!--<form>
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -294,7 +410,10 @@
                                 <button class="btn btn-primary btn-block" type="submit" style="height: 47px;">Make Appointment</button>
                             </div>
                         </div>
-                    </form>
+                    </form>-->
+
+
+
                 </div>
             </div>
         </div>
@@ -411,11 +530,20 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
+                        {%if datos_especialistas%}
+                        <img class="img-fluid" src="{% static  datos_especialistas.0.foto_especialista  %}" alt="">
+                        {%else%}
+                        <img class="img-fluid" src="" alt="">
+                        {%endif%} 
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Olivia Mia</h5>
-                                <p class="m-0">Spa & Beauty Expert</p>
+                                    {%if datos_especialistas%}
+                                    <h5 class="text-white text-uppercase">{{ datos_especialistas.0.nombre_especialista }}</h5>
+                                    <p class="m-0">{{ datos_especialistas.0.especialidad_especialista }}</p>
+                                    {%else%}
+                                    <h5 class="text-white text-uppercase">Cargue informacion</h5>
+                                    <p class="m-0">Cargue informacion</p>
+                                    {%endif%} 
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -428,11 +556,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
+                        {%if datos_especialistas%}
+                        <img class="img-fluid" src="{% static  datos_especialistas.1.foto_especialista  %}" alt="">
+                        {%else%}
+                        <img class="img-fluid" src="" alt="">
+                        {%endif%} 
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Cory Brown</h5>
-                                <p class="m-0">Spa & Beauty Expert</p>
+                                {%if datos_especialistas%}
+                                <h5 class="text-white text-uppercase">{{ datos_especialistas.1.nombre_especialista }}</h5>
+                                <p class="m-0">{{ datos_especialistas.1.especialidad_especialista }}</p>
+                                {%else%}
+                                <h5 class="text-white text-uppercase">Cargue informacion</h5>
+                                <p class="m-0">Cargue informacion</p>
+                                {%endif%} 
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -445,11 +582,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                        {%if datos_especialistas%}
+                        <img class="img-fluid" src="{% static  datos_especialistas.2.foto_especialista  %}" alt="">
+                        {%else%}
+                        <img class="img-fluid" src="" alt="">
+                        {%endif%} 
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Elizabeth Ross</h5>
-                                <p class="m-0">Spa & Beauty Expert</p>
+                                {%if datos_especialistas%}
+                                <h5 class="text-white text-uppercase">{{ datos_especialistas.2.nombre_especialista }}</h5>
+                                <p class="m-0">{{ datos_especialistas.2.especialidad_especialista }}</p>
+                                {%else%}
+                                <h5 class="text-white text-uppercase">Cargue informacion</h5>
+                                <p class="m-0">Cargue informacion</p>
+                                {%endif%} 
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -462,11 +608,20 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="team position-relative overflow-hidden mb-5">
-                        <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                        {%if datos_especialistas%}
+                        <img class="img-fluid" src="{% static  datos_especialistas.3.foto_especialista  %}" alt="">
+                        {%else%}
+                        <img class="img-fluid" src="" alt="">
+                        {%endif%} 
                         <div class="position-relative text-center">
                             <div class="team-text bg-primary text-white">
-                                <h5 class="text-white text-uppercase">Kelly Walke</h5>
-                                <p class="m-0">Spa & Beauty Expert</p>
+                                {%if datos_especialistas%}
+                                <h5 class="text-white text-uppercase">{{ datos_especialistas.3.nombre_especialista }}</h5>
+                                <p class="m-0">{{ datos_especialistas.3.especialidad_especialista }}</p>
+                                {%else%}
+                                <h5 class="text-white text-uppercase">Cargue informacion</h5>
+                                <p class="m-0">Cargue informacion</p>
+                                {%endif%} 
                             </div>
                             <div class="team-social bg-dark text-center">
                                 <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>

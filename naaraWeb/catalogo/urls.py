@@ -19,7 +19,7 @@ from .views import ServicioListView, ServicioDetailView, ServicioCreateView, Ser
 from .views import ProductoListView, ProductoDetailView, ProductoCreateView, ProductoUpdateView, ProductoDeleteView
 from .views import ReservaListView, ReservaDetailView, ReservaCreateView, ReservaUpdateView, ReservaDeleteView
 from .views import ClienteListView, ClienteDetailView, ClienteCreateView, ClienteUpdateView, ClienteDeleteView
-from .views import Inicio, About, Price,Appointment, Contact, Opening, Team, Testimonial
+from .views import Inicio, About, Price,Appointment, Contact, Opening, Team, Testimonial,ReservaCita
 
 urlpatterns = [
 
@@ -32,6 +32,7 @@ urlpatterns = [
     path('opening/', Opening.as_view(),name='opening'),
     path('team/', Team.as_view(),name='team'),
     path('testimonial/', Testimonial.as_view(),name='testimonial'),
+    path('make-appointment/', ReservaCita.as_view(), name='make_appointment'),
     
     # URLs para los servicios
     path('servicios/', ServicioListView.as_view(), name='servicio-list'),

@@ -1,113 +1,35 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView
-from .models import Servicio, Producto, Reserva, Cliente,InformacionPagina
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView,FormView
+from .models import Servicio, Producto, Reserva, Cliente,InformacionPagina,Especialistas, Citas
 from django.urls import reverse_lazy
-"""from django.views.generic import View, TemplateView, ListView
-from catalogo.models import Catalogo
-"""
-"""#Vista basada en clase
-class Inicio(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"index.html")"""
-"""
-#Vista basada en clase, esta clase solo renderiza una plantilla
-class Inicio(TemplateView):
-
-    template_name = "index.html"
-"""
-
-""""#Vista basada en clase
-class ListaNombres(TemplateView):
-
-    template_name ="lista.html"
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-
-        #nombres = Catalogo.objects.filter(nombre_articulo=True)
-
-        nombres = Catalogo.objects.all()
-
-        resultado = {"datos":nombres}
-
-        return render(request,self.template_name,resultado)"""
-"""
-#Vista basada en clase, se usa para listar
-class ListaNombres(ListView):
-
-    model = Catalogo
-
-    template_name ="lista.html"
-
-    context_object_name ="datos"
-
-    queryset = Catalogo.objects.all()
-
-    #queryset = Catalogo.objects.all() #Esto esta interno por defecto
+from .frams import CitasForm
 
 
-#Vista basada en clase
-class Precio(View):
 
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"price.html")
-    
-#Vista basada en clase
-class Servicio(View):
+class ReservaCita(FormView):
+    template_name = 'index.html'
+    form_class = CitasForm
+    success_url = reverse_lazy('appointment_success')
 
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"service.html")
-    
-#Vista basada en clase
-class Appointment(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-          return render(request,"appointment.html")
-    
-#Vista basada en clase
-class Opening(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"opening.html")
-    
-#Vista basada en clase
-class Team(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"team.html")
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
 
 
-#Vista basada en clase
-class About(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-       return render(request,"about.html")
-
-#Vista basada en clase
-class Contact(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"contact.html")
-
-#Vista basada en clase
-class Testimonial(View):
-
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
-        return render(request,"testimonial.html")
-
-"""
-
+'''Vista que se escarga de renderizar el inicio de la pagina y pasa alguna informacion adicional'''
 class Inicio(TemplateView):
 
     template_name = "index.html"
 
-    def get(self,request,*args,**kwargs): #Sobreescribiendo metodo
+    def get(self,request,*args,**kwargs): #Sobrescribiendo el metodo get de la super clase
 
         informacion = InformacionPagina.objects.all()
 
-        informacion_servicio = Servicio.objects.all()
+        informacion_servicios = Servicio.objects.all()
 
-        resultado = {"datos":informacion,"datos_servicio":informacion_servicio}
+        informacion_especialistas = Especialistas.objects.all()
+
+        resultado = {"datos":informacion,"datos_servicio":informacion_servicios,"datos_especialistas":informacion_especialistas}
 
         return render(request,self.template_name,resultado)
 
