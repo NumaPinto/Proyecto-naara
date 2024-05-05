@@ -13,7 +13,7 @@ class ReservaCita(FormView):
 
     def form_valid(self, form):
         form.save()
-        return super().form_valid(form)
+        return super().form_valid(form) 
 
 
 '''Vista que se escarga de renderizar el inicio de la pagina y pasa alguna informacion adicional'''
