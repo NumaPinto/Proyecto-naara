@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bk78towmgpym_91@^+pnnh_jp(v=867gf(wf@(eck-yzf55ldp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['164.92.72.187', 'localhost', '127.0.0.1']
 
 STATICFILES_DIRS = ['naaraWeb/plantillas/static']
 
