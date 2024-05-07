@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-bk78towmgpym_91@^+pnnh_jp(v=867gf(wf@(eck-yzf55ldp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['164.92.72.187', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['24.199.116.31', 'naarasalonyspa.com','www.naarasalonyspa.com' 'localhost']
 
 STATICFILES_DIRS = ['naaraWeb/plantillas/static']
 
@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'naaraWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'numa',
+        'USER': 'numa',
+        'POSWORD': '1DiosAmo',
+        'PORT': '5432',
+        'HOST': 'localhost',
     }
 }
 
