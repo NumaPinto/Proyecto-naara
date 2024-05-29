@@ -37,7 +37,7 @@ class Inicio(TemplateView):
         return render(request,self.template_name,resultado)
     def _get_informacion_especilistas(self,modelo):
       
-     informacion =  modelo.all()
+     informacion =  modelo.objects.all()
      
      return informacion
 
