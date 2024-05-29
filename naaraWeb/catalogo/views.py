@@ -29,7 +29,7 @@ class Inicio(TemplateView):
        
 
         informacion_servicios = Servicio.objects.all()
-        informacion_especilistas = self._get_informacion_especilistas(model)
+        informacion_especilistas = self._get_informacion_especilistas(self.model)
 
 
         resultado = {"datos_servicio":informacion_servicios,"datos_especialistas":informacion_especialistas}
