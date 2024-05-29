@@ -411,8 +411,25 @@
                 <img class="img-fluid" src="" alt="">
                 <div class="position-relative text-center">
                     <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">{{datos_especialista.0.nombre_especialista}}Dra. Yasnely Cedeño</h5>
-                        <p class="m-0">Especialista en Medicina Estetica</p>
+                      {% if datos_especialista %}
+                       <h5 class="text-white text-uppercase">{{datos_especialista.0.nombre_especialista}} {{datos_especialista.0.apellido_especialista}}</h5>
+                       
+                       <p class="m-0">{{datos_especialista.0.especialidad_especialista}}</p>
+                   
+                   
+                       {% else %}
+                       
+                        <h5 class="text-white text-uppercase"></h5>
+                       
+                        <p class="m-0"></p>
+                       
+                         
+                       {% endif %}
+                      
+                      
+                      
+                        
+                        
                     </div>
                     <div class="team-social bg-dark text-center">
             
