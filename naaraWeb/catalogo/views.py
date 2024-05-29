@@ -18,20 +18,28 @@ class ReservaCita(FormView):
 
 '''Vista que se escarga de renderizar el inicio de la pagina y pasa alguna informacion adicional'''
 class Inicio(TemplateView):
+  
+    model = Especialistas
 
     template_name = "index.html"
+    
+#Sobrescribiendo el metodo get de la super clase
+    def get(self,request,*args,**kwargs): 
 
-    def get(self,request,*args,**kwargs): #Sobrescribiendo el metodo get de la super clase
-
-        informacion = InformacionPagina.objects.all()
+       
 
         informacion_servicios = Servicio.objects.all()
+        informacion_especilistas = self._get_informacion_especilistas(model)
 
-        informacion_especialistas = Especialistas.objects.all()
 
-        resultado = {"datos":informacion,"datos_servicio":informacion_servicios,"datos_especialistas":informacion_especialistas}
+        resultado = {"datos_servicio":informacion_servicios,"datos_especialistas":informacion_especialistas}
 
         return render(request,self.template_name,resultado)
+    def _get_informacion_especilistas(self,modelo):
+      
+     informacion =  modelo.all()
+     
+     return informacion
 
 class About(TemplateView):
 
