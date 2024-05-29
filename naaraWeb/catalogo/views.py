@@ -61,85 +61,16 @@ class Contact(TemplateView):
 
     template_name = "contact.html"
 
-class Testimonial(TemplateView):
-
-     template_name = "testimonial.html"
-
-
 class ServicioListView(ListView):
     model = Servicio
     template_name ="service.html"
-    context_object_name ="datos"
-
-class ServicioDetailView(DetailView):
-    #template_name ="servicio_detail.html"
-    model = Servicio
-
-class ServicioCreateView(CreateView):
-    model = Servicio
-   # template_name ="servicio_form.html"
-    fields = ['nombre_servicio', 'descripcion_servicio', 'precio_servicio']
-
-class ServicioUpdateView(UpdateView):
-    model = Servicio
-   # template_name ="servicio_form.html"
-    fields = ['nombre_servicio', 'descripcion_servicio', 'precio_servicio']
-
-class ServicioDeleteView(DeleteView):
-    model = Servicio
-   # template_name ="servicio_confirm_delete.html"
-    success_url = reverse_lazy('servicio-list')
 
 class ProductoListView(ListView):
     model = Producto
 
-class ProductoDetailView(DetailView):
-    model = Producto
-
-class ProductoCreateView(CreateView):
-    model = Producto
-    fields = ['nombre_producto', 'descripcion_producto', 'precio_producto', 'cantidad_disponible_producto']
-
-class ProductoUpdateView(UpdateView):
-    model = Producto
-    fields = ['nombre_producto', 'descripcion_producto', 'precio_producto', 'cantidad_disponible_producto']
-
-class ProductoDeleteView(DeleteView):
-    model = Producto
-    success_url = reverse_lazy('producto-list')
-
 class ReservaListView(ListView):
     model = Reserva
-
-class ReservaDetailView(DetailView):
-    model = Reserva
-
-class ReservaCreateView(CreateView):
-    model = Reserva
-    fields = ['servicio', 'productos', 'fecha', 'nombre_cliente', 'telefono_cliente', 'correo_cliente']
-
-class ReservaUpdateView(UpdateView):
-    model = Reserva
-    fields = ['servicio', 'productos', 'fecha', 'nombre_cliente', 'telefono_cliente', 'correo_cliente']
-
-class ReservaDeleteView(DeleteView):
-    model = Reserva
-    success_url = reverse_lazy('reserva-list')
 
 class ClienteListView(ListView):
     model = Cliente
 
-class ClienteDetailView(DetailView):
-    model = Cliente
-
-class ClienteCreateView(CreateView):
-    model = Cliente
-    fields = ['nombre_cliente', 'apellido_cliente', 'telefono_cliente', 'correo_cliente']
-
-class ClienteUpdateView(UpdateView):
-    model = Cliente
-    fields = ['nombre_cliente', 'apellido_cliente', 'telefono_cliente', 'correo_cliente']
-
-class ClienteDeleteView(DeleteView):
-    model = Cliente
-    success_url = reverse_lazy('cliente-list')
