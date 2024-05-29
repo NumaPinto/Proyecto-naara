@@ -34,9 +34,17 @@ class Inicio(TemplateView):
         return render(request,self.template_name,resultado)
     def _get_informacion_especilistas(self,modelo):
       
-     informacion =  modelo.objects.filter(estado=True)
+     datos =  list(modelo.objects.filter(estado=True))
      
+     informacion =[]
+
+     if datos:
      
+        for i in range(5):
+          
+          informacion.append(datos[i])
+        
+    
      return informacion
 
 class About(TemplateView):
