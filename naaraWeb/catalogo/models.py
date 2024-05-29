@@ -74,6 +74,9 @@ class Cliente(ModeloBase):
 class InformacionPagina(ModeloBase):
     nombre_informacion = models.CharField("Información de la página Web",max_length=100)
     acerca = models.TextField("Acerca de la página Web")
+    facebook =models.URLField("Facebook", null=True,blank=True)
+    instagram =models.URLField("Instagram", null=True,blank=True)
+    youtube =models.URLField("YouTube", null=True,blank=True)
     
     class Meta:
       verbose_name="Informacion de la Pagina Web"
