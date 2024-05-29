@@ -19,7 +19,7 @@ class ReservaCita(FormView):
 '''Vista que se escarga de renderizar el inicio de la pagina y pasa alguna informacion adicional'''
 class Inicio(TemplateView):
   
-    model = Especialistas()
+    model = Especialistas
 
     template_name = "index.html"
     
@@ -35,7 +35,7 @@ class Inicio(TemplateView):
     def _get_informacion_especilistas(self,modelo):
       
      #informacion =  modelo.objects.filter(estado=True)
-     informacion =  modelo.objects.all()
+     informacion =  modelo.objects.filter(estado=True)
      
      
      return informacion
