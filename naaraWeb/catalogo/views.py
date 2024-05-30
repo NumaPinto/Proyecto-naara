@@ -38,7 +38,7 @@ class Inicio(TemplateView):
      
      informacion =[]
 
-     if datos:
+     if len(datos) >= 5:
      
         for i in range(5):
           
