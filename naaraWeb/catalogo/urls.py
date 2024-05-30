@@ -32,7 +32,7 @@ urlpatterns = [
     path('contact/', Contact.as_view(),name='contact'),
     path('opening/', Opening.as_view(),name='opening'),
     path('team/', Team.as_view(),name='team'),
-    path('make-appointment/', ReservaCita.as_view(), name='make_appointment'),
+ 
     
     # URLs para los servicios
     path('servicios/', ServicioListView.as_view(), name='servicio-list'),
