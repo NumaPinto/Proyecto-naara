@@ -9,24 +9,24 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
-        <!-- Favicon -->
-        <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-        <!-- Font Awesome -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    
-        <!-- Libraries Stylesheet -->
-        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
-        <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
-        <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
-    
-        <!-- Customized Bootstrap Stylesheet -->
-        <link href="{% static 'css/style.css' %}" rel="stylesheet">
-        <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center">
-                    <small class="clase1"><i class="fa fa-phone-alt mr-2" ></i>+58 412-2555327</small>
+                    <small class="clase1"><i class="fa fa-phone-alt mr-2"></i>+58 412-2555327</small>
                     <small class="px-3 clase1">|</small>
                     <small class="clase1"><i class="fa fa-envelope mr-2"></i>contacto.naarasalonspa@gmail.com</small>
                 </div>
@@ -63,7 +63,7 @@
         <nav class="navbar navbar-expand-lg  navbar-light py-3 py-lg-0 px-lg-5 fondo2">
             <a href={% url "index" %} class="navbar-brand ml-lg-3">
                 <h1 class=" text-white espacio-texto">NAARA</h1>
-                <h6 class="tamano-texto">SALÓN & SPA</h6> 
+                <h6 class="tamano-texto">SALÓN & SPA</h6>
             </a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -71,7 +71,7 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
                     <a href={% url "index" %} class="nav-item nav-link active">Inicio</a>
-                    <a href={% url "about" %}  class="nav-item nav-link">Acerca de</a>
+                    <a href={% url "about" %} class="nav-item nav-link">Acerca de</a>
                     <a href={% url "servicio-list" %} class="nav-item nav-link">Servicios</a>
                     <a href={% url "price" %} class="nav-item nav-link">Precios</a>
                     <div class="nav-item dropdown">
@@ -80,7 +80,7 @@
                             <a href={% url "appointment" %} class="dropdown-item">Cita</a>
                             <a href={% url "opening" %} class="dropdown-item">Horario de Apertura</a>
                             <a href={% url "team"  %} class="dropdown-item">Nuestro Equipo</a>
-                      
+
                         </div>
                     </div>
                     <a href={% url "contact" %} class="nav-item nav-link">Contactame</a>
@@ -107,7 +107,9 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Spa & centro de belleza</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Tratamiento de Masajes</h3>
-                            <p class="mx-md-5 px-5">Ofrecemos todo tipo de tratamientos para el bienestar y que se adapte a tu necesidad</p>
+                            <p class="mx-md-5 px-5">
+                                Ofrecemos todo tipo de tratamientos para el bienestar y que se adapte a tu necesidad
+                            </p>
                             <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
                         </div>
                     </div>
@@ -118,7 +120,9 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Spa & centro de belleza</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Tratamiento Facial</h3>
-                            <p class="mx-md-5 px-5">Contamos con los profesionales en el area, donde ofrecemos el tratamiento facial que se adapte a tu requerimiento</p>
+                            <p class="mx-md-5 px-5">
+                                Contamos con los profesionales en el area, donde ofrecemos el tratamiento facial que se adapte a tu requerimiento
+                            </p>
                             <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
                         </div>
                     </div>
@@ -129,7 +133,9 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h6 class="text-white text-uppercase mb-3 animate__animated animate__fadeInDown" style="letter-spacing: 3px;">Spa & centro de belleza</h6>
                             <h3 class="display-3 text-capitalize text-white mb-3">Tratamiento de Celulitis</h3>
-                            <p class="mx-md-5 px-5">Damos el maasaje relajante y todos los componentes para eliminar esas celulitis</p>
+                            <p class="mx-md-5 px-5">
+                                Damos el maasaje relajante y todos los componentes para eliminar esas celulitis
+                            </p>
                             <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
                         </div>
                     </div>
@@ -146,18 +152,22 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 pb-5 pb-lg-0">
 
-                  
 
-                    <video  src="{% static 'media/naara.webm' %}"  width="500" height="650" controls autoplay  poster= "{% static 'media/imagen.jpg' %}" >
-                        <p>Su navegador no soporta vídeos HTML5.</p>
-                      </video>
-                      
+
+                    <video src="{% static 'media/naara.webm' %}" width="500" height="650" controls autoplay poster="{% static 'media/imagen.jpg' %}">
+                        <p>
+                            Su navegador no soporta vídeos HTML5.
+                        </p>
+                    </video>
+
 
                 </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block clase1 text-uppercase fondo3  py-1 px-2">Acerca de Nosotros</h6>
                     <h2 class="mb-4">NAARA es un emprendimiento que nace con la concepción de brindar un espaciodedicado a la belleza y bienestar</h2>
-                    <p class="pl-4 border-left border-primary">Ofreciendo una experiencia holística que nutra el cuerpoy el alma.A través de distintas terapias, tratamientos estéticos, terapéuticos y de belleza,buscamos realzar la vitalidad y frescura, donde cada visita a nuestros espacios sea unaoportunidad para sumergirse en un oasis lleno de agradables experiencias, que permitandesconectarse de la rutina diaria y transitar por un viaje sensorial único.Nos rodeamos de un ambiente sublime y elegante, donde cada detalle ha sidodiseñado para el disfrute y confort de nuestros clientes, de la mano de expertos altamentecalificados, que brindaran atención dedicada y cordial, con equipos y tecnología de últimageneración, garantizando resultados óptimos.NAARA, más que una experiencia... es un en un estilo de vida.</p>
+                    <p class="pl-4 border-left border-primary">
+                        Ofreciendo una experiencia holística que nutra el cuerpoy el alma.A través de distintas terapias, tratamientos estéticos, terapéuticos y de belleza,buscamos realzar la vitalidad y frescura, donde cada visita a nuestros espacios sea unaoportunidad para sumergirse en un oasis lleno de agradables experiencias, que permitandesconectarse de la rutina diaria y transitar por un viaje sensorial único.Nos rodeamos de un ambiente sublime y elegante, donde cada detalle ha sidodiseñado para el disfrute y confort de nuestros clientes, de la mano de expertos altamentecalificados, que brindaran atención dedicada y cordial, con equipos y tecnología de últimageneración, garantizando resultados óptimos.NAARA, más que una experiencia... es un en un estilo de vida.
+                    </p>
                     <div class="row pt-3">
                         <div class="col-6">
                             <div class="fondo3 text-center p-4">
@@ -188,33 +198,39 @@
             </div>
         </div>
         <div class="owl-carousel service-carousel">
-            
+
             <div class="service-item position-relative">
                 <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Masaje Corporal</h4>
-                    <p class="text-white px-3 mb-3"> Es una técnica de Manipulación de tejidos blandos para relajar, aliviar y rejuvenecer el cuerpo.</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        Es una técnica de Manipulación de tejidos blandos para relajar, aliviar y rejuvenecer el cuerpo.
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}"  alt="">
+                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Terapias con Piedras</h4>
-                    <p class="text-white px-3 mb-3">Massajes curativos que emplean piedras calientes para aliviar tensiones musculares.</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        Massajes curativos que emplean piedras calientes para aliviar tensiones musculares.
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="">Make Order</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}"  alt="">
+                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Terapia Facial</h4>
-                    <p class="text-white px-3 mb-3">Tratamiento especializado para rejuvenecer la piel y promover bienestar.</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        Tratamiento especializado para rejuvenecer la piel y promover bienestar.
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
@@ -223,28 +239,34 @@
                 <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Proteccion de la Piel</h4>
-                    <p class="text-white px-3 mb-3">medicamento rejuvenecimiento para la piel</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        medicamento rejuvenecimiento para la piel
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}"  alt="">
+                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Baño de Arroyo</h4>
-                    <p class="text-white px-3 mb-3">Elige el lugar perfecto Sumergirse en aguas naturales de arroyos para relajación y revitalización.</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        Elige el lugar perfecto Sumergirse en aguas naturales de arroyos para relajación y revitalización.
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
             </div>
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}"  alt="">
+                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}" alt="">
                 <div class="service-text text-center">
                     <h4 class="text-white font-weight-medium px-3">Enmascarecimiento Facial</h4>
-                    <p class="text-white px-3 mb-3">elige la mascarilla desde arcilla hasta moco de gorila</p>
-                    <div class="w-100 bg-white text-center p-4" >
+                    <p class="text-white px-3 mb-3">
+                        elige la mascarilla desde arcilla hasta moco de gorila
+                    </p>
+                    <div class="w-100 bg-white text-center p-4">
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
@@ -254,44 +276,35 @@
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 class="text-white text-center mb-4">Concertar Cita</h1>
-                    <form>
-                        <div class="form-row">
+                    <form method="post">
+                        {% csrf_token %} <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent p-4" placeholder="Nombres" required="required" />
+                                    {{ form.nombre }}
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent p-4" placeholder="Correo" required="required" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <div class="date" id="Fecha" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <div class="time" id="Hora" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker"/>
-                                    </div>
+                                    {{ form.correo }}
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <select class="custom-select bg-transparent px-4" style="height: 47px;">
-                                        <option selected>Elegir Servicio</option>
-                                        <option value="1">Peluqueria</option>
-                                        <option value="2">Manicure y Pedicure</option>
-                                        <option value="3">Masajes Relajantes</option>
-                                    </select>
+                                    {{ form.fecha }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.hora }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.servicio }}
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -312,14 +325,16 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{% static 'img/opening.jpg' %}"  style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/opening.jpg' %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="hours-text bg-light p-4 p-lg-5 my-lg-5">
                         <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Horario</h6>
                         <h1 class="mb-4">Limpieza Facial y Nutrición Celular</h1>
-                        <p>Tratamiento facial avanzado que combina técnicas de limpieza profunda y nutrición celular para promover la salud y la vitalidad de la piel.</p>
+                        <p>
+                            Tratamiento facial avanzado que combina técnicas de limpieza profunda y nutrición celular para promover la salud y la vitalidad de la piel.
+                        </p>
                         <ul class="list-inline">
                             <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Lunes – Viernes : 9:00 AM - 7:00 PM</li>
                             <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Sabados : 9:00 AM - 6:00 PM</li>
@@ -340,7 +355,7 @@
             <div class="row">
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{% static 'img/pricing.jpg' %}"  style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/pricing.jpg' %}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-7 pt-5 pb-lg-5">
@@ -348,42 +363,70 @@
                         <div class="owl-carousel pricing-carousel">
                             <div class="bg-white">
                                 <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                   
+
                                     <h5 class="text-primary text-uppercase m-0">DÍa de SPA</h5>
                                 </div>
                                 <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Masaje Relajante</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Limpieza Facial</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Lavado y Secado de Cabello</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Copa de Vino</p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Masaje Relajante
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Limpieza Facial
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Lavado y Secado de Cabello
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Copa de Vino
+                                    </p>
                                     <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Ordenar Ahora</a>
                                 </div>
                             </div>
                             <div class="bg-white">
                                 <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                  
+
                                     <h5 class="text-primary text-uppercase m-0">Family Plan</h5>
                                 </div>
                                 <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Full Body Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Hot Stone Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Tissue Body Polish</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Foot & Nail Care</p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Full Body Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Hot Stone Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Tissue Body Polish
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Foot & Nail Care
+                                    </p>
                                     <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Ordenar Ahora</a>
                                 </div>
                             </div>
                             <div class="bg-white">
                                 <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                   
+
                                     <h5 class="text-primary text-uppercase m-0">VIP Plan</h5>
                                 </div>
                                 <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Full Body Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Hot Stone Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Tissue Body Polish</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Foot & Nail Care</p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Full Body Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Hot Stone Massage
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Tissue Body Polish
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>Foot & Nail Care
+                                    </p>
                                     <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Reservar Ahora</a>
                                 </div>
                             </div>
@@ -406,50 +449,52 @@
         </div>
 
         <div class="owl-carousel service-carousel">
-          
-              {% if datos_especialista %}
-              
-              
-              {% for dato in datos_especialista %}
-              
-              
-                                        <div class="team position-relative overflow-hidden mb-5">
-                                          <img class="img-fluid" src="{{dato.foto_especialista.url}}" alt="">
-              
-                                          <div class="position-relative text-center">
-                                            <div class="team-text bg-primary text-white">
-      
-                      <h5 class="text-white text-uppercase">{{dato.nombre_especialista}} {{dato.apellido_especialista}}</h5>
-              
-                                              <p class="m-0">{{dato.especialidad_especialista}}</p>
-              
-                           </div>
-                                            <div class="team-social bg-dark text-center">
-              
-                           <a class="btn btn-outline-primary btn-square mr-2" href="{{datos_especialista.facebook}}"><i class="fab fa-facebook-f"></i></a>
-              
-                                              <a class="btn btn-outline-primary btn-square" href="{{datos_especialista.instagram}}"><i class="fab fa-instagram"></i></a>
-       
-                                            </div>
-                                          </div>
-                                        </div>
-              
-              
-             
-              {% endfor %}
-            
-              
-              {% else %}
-              
-              
-              {% endif %}
+
+            {% if datos_especialista %}
+
+
+            {% for dato in datos_especialista %}
+
+
+            <div class="team position-relative overflow-hidden mb-5">
+                <img class="img-fluid" src="{{dato.foto_especialista.url}}" alt="">
+
+                <div class="position-relative text-center">
+                    <div class="team-text bg-primary text-white">
+
+                        <h5 class="text-white text-uppercase">{{dato.nombre_especialista}} {{dato.apellido_especialista}}</h5>
+
+                        <p class="m-0">
+                            {{dato.especialidad_especialista}}
+                        </p>
+
+                    </div>
+                    <div class="team-social bg-dark text-center">
+
+                        <a class="btn btn-outline-primary btn-square mr-2" href="{{datos_especialista.facebook}}"><i class="fab fa-facebook-f"></i></a>
+
+                        <a class="btn btn-outline-primary btn-square" href="{{datos_especialista.instagram}}"><i class="fab fa-instagram"></i></a>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            {% endfor %}
+
+
+            {% else %}
+
+
+            {% endif %}
 
 
         </div>
 
 
     </div>
-  <!-- Team End -->
+    <!-- Team End -->
 
     <!-- Footer Start -->
     <div class="footer container-fluid position-relative fondo2 py-5" style="margin-top: 90px;">
@@ -461,21 +506,29 @@
                         <h6 class="tamano-texto">SALÓN & SPA</h6>
                     </a>
 
-                      <div    class="espacio">
+                    <div class="espacio">
 
-                        <p >LA MEJOR FORMA DE TENER EL RELAJAMIENTO IDEAL EN TODAS LAS PERSPECTIVAS.</p>
-                        <p><i class="fa fa-map-marker-alt mr-2 "></i>Hotel Manantial, Naguanagua, Venezuela</p>
-                        <p><i class="fa fa-phone-alt mr-2"></i>04124628123</p>
-                        <p><i class="fa fa-envelope mr-2"></i>naara.salonyspa@gmail.com</p>
-    
+                        <p>
+                            LA MEJOR FORMA DE TENER EL RELAJAMIENTO IDEAL EN TODAS LAS PERSPECTIVAS.
+                        </p>
+                        <p>
+                            <i class="fa fa-map-marker-alt mr-2 "></i>Hotel Manantial, Naguanagua, Venezuela
+                        </p>
+                        <p>
+                            <i class="fa fa-phone-alt mr-2"></i>04124628123
+                        </p>
+                        <p>
+                            <i class="fa fa-envelope mr-2"></i>naara.salonyspa@gmail.com
+                        </p>
+
                         <div class="d-flex justify-content-start mt-4">
-                          
+
                             <a class="btn btn-lg btn-primary btn-lg-square mr-2" href="https://www.facebook.com/profile.php?id=61559690428615"><i class="fab fa-facebook-f"></i></a>
-                         
+
                             <a class="btn btn-lg btn-primary btn-lg-square" href="https://www.instagram.com/naarasalonyspa"><i class="fab fa-instagram"></i></a>
                         </div>
 
-                      </div>
+                    </div>
                 </div>
                 <div class="col-lg-6 pl-lg-5">
                     <div class="row">
@@ -519,10 +572,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
-                    <p class="m-0 text-white">&copy; <a href="https://www.naarasalonyspa.com/">Naara Salón & Spa</a> Todos los derechos reservados.</p>
+                    <p class="m-0 text-white">
+                        &copy; <a href="https://www.naarasalonyspa.com/">Naara Salón & Spa</a> Todos los derechos reservados.
+                    </p>
                 </div>
                 <div class="col-md-6 text-center text-md-right">
-               
+
                 </div>
             </div>
         </div>
@@ -534,23 +589,23 @@
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-     <!-- JavaScript Libraries -->
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
-     <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
-     <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
-     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
-     <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
-     <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
-     <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
- 
-     <!-- Contact Javascript File -->
-     <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
-     <script src="{% static 'mail/contact.js' %}"></script>
- 
-     <!-- Template Javascript -->
-     <script src="{% static 'js/main.js' %}"></script>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+    <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'mail/contact.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
