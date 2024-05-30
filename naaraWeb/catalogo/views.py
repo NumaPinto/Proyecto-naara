@@ -9,6 +9,17 @@ class CitasCreateView(CreateView):
     form_class = CitasForm
     template_name = 'index.html'
     success_url = reverse_lazy('citas:success')
+    
+    def post(self,request,*args,**kwargs):
+            form = CitasForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('base:index')
+            else:
+                contexto = {
+                    'form':form,
+                }
+                return render(request,'index.html',contexto)
 
 
 
