@@ -406,63 +406,47 @@
         </div>
 
         <div class="owl-carousel service-carousel">
-
-            <div class="team position-relative overflow-hidden mb-5">
+          
               {% if datos_especialista %}
               
-              <img class="img-fluid" src="{{datos_especialista.0.foto_especialista.url}}" alt="">
+              
+              {% for dato in datos_especialista %}
+              
+              
+                                        <div class="team position-relative overflow-hidden mb-5">
+                                          <img class="img-fluid" src="{{dato.foto_especialista.url}}" alt="">
+              
+                                          <div class="position-relative text-center">
+                                            <div class="team-text bg-primary text-white">
+      
+                      <h5 class="text-white text-uppercase">{{dato.nombre_especialista}} {{dato.apellido_especialista}}</h5>
+              
+                                              <p class="m-0">{{dato.especialidad_especialista}}</p>
+              
+                           </div>
+                                            <div class="team-social bg-dark text-center">
+              
+                           <a class="btn btn-outline-primary btn-square mr-2" href="{{datos_especialista.facebook}}"><i class="fab fa-facebook-f"></i></a>
+              
+                                              <a class="btn btn-outline-primary btn-square" href="{{datos_especialista.instagram}}"><i class="fab fa-instagram"></i></a>
+       
+                                            </div>
+                                          </div>
+                                        </div>
+              
+              
+             
+              {% endfor %}
+              
+       
               
               
               {% else %}
               
-              <img class="img-fluid" src="#" alt="">
+              
               
               
               {% endif %}
-
-                <div class="position-relative text-center">
-                    <div class="team-text bg-primary text-white">
-                      {% if datos_especialista %}
-                       <h5 class="text-white text-uppercase">{{datos_especialista.0.nombre_especialista}} {{datos_especialista.0.apellido_especialista}}</h5>
-                       
-                       <p class="m-0">{{datos_especialista.0.especialidad_especialista}}</p>
-                   
-                   
-                       {% else %}
-                       
-                        <h5 class="text-white text-uppercase"></h5>
-                       
-                        <p class="m-0"></p>
-                       
-                         
-                       {% endif %}
-                      
-                      
-                      
-                        
-                        
-                    </div>
-                    <div class="team-social bg-dark text-center">
-            
-                       {% if datos_especialista %}
-                       <a class="btn btn-outline-primary btn-square mr-2" href="{{datos_especialista.0.facebook}}"><i class="fab fa-facebook-f"></i></a>
-                       
-                       <a class="btn btn-outline-primary btn-square" href="{{datos_especialista.0.instagram}}"><i class="fab fa-instagram"></i></a>
-                       
-                       
-                       {% else %}
-                       
-                       
-                       <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                       
-                       <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                       
-                       
-                       {% endif %}  
-                    </div>
-                </div>
-            </div> 
-            
 
 
         </div>
