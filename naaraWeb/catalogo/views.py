@@ -14,7 +14,7 @@ class CitasCreateView(CreateView):
             form = CitasForm(request.POST)
             if form.is_valid():
                 form.save()
-                return redirect('base:index')
+                return redirect('index')
             else:
                 contexto = {
                     'form':form,
