@@ -2,18 +2,14 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView, TemplateView,FormView
 from .models import Servicio, Producto, Reserva, Cliente,InformacionPagina,Especialistas, Citas
 from django.urls import reverse_lazy
-from .frams import CitasForm
+from .froms import CitasForm
 
-
-
-class ReservaCita(FormView):
-    template_name = 'index.html'
+class CitasCreateView(CreateView):
+    model = Citas
     form_class = CitasForm
-    success_url = reverse_lazy('appointment_success')
+    template_name = 'index.html'
+    success_url = reverse_lazy('citas:success')
 
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form) 
 
 
 '''Vista que se escarga de renderizar el inicio de la pagina y pasa alguna informacion adicional'''
