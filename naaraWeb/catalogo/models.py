@@ -72,7 +72,7 @@ class Cliente(ModeloBase):
 
 '''Modelo que se encarga de registrar informacion adicional de la pagina'''
 class InformacionPagina(ModeloBase):
-    nombre_informacion = models.CharField("Información de la página Web",max_length=100)
+    informacion = models.CharField("Información de la página Web",max_length=300)
     acerca = models.TextField("Acerca de la página Web")
     facebook =models.URLField("Facebook", null=True,blank=True)
     instagram =models.URLField("Instagram", null=True,blank=True)
@@ -83,7 +83,7 @@ class InformacionPagina(ModeloBase):
       verbose_name_plural="Informacion de la Pagina Web"
     
     def __str__(self):
-        return self.nombre_informacion
+        return self.informacion
 
 '''Modelo que se encarga de registrar los planes disponibles que ofrece la empresa'''
 class Planes(ModeloBase):
@@ -131,3 +131,31 @@ class Citas(ModeloBase):
 
     def __str__(self):
         return self.nombre
+        
+
+'''Modelo que se encarga de registrar la informacion de los usuarios'''
+class Contactanos(ModeloBase):
+    nombre_cliente = models.CharField("Nombre del Cliente",max_length=100)
+    apellido_cliente = models.CharField("Apellido del Cliente",max_length=100)
+    telefono_cliente = models.CharField("Teléfono del Cliente",max_length=15)
+    correo_cliente = models.EmailField("Correo")
+    asunto_cliente = models.CharField("Asunto",max_length=100)
+    mensaje_cliente = models.TextField("Mensaje")
+    
+    class Meta:
+      verbose_name="Contacto"
+      verbose_name_plural="Contactanos"
+
+    def __str__(self):
+        return f'{self.nombre_cliente} {self.apellido_cliente}'
+
+
+class Suscriptor(ModeloBase):
+    correo = models.EmailField('Correo Electrónico', max_length = 200)
+
+    class Meta:
+        verbose_name = 'Suscriptor'
+        verbose_name_plural = 'Suscriptores'
+
+    def __str__(self):
+        return self.correo

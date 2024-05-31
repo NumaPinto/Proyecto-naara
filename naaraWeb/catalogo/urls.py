@@ -19,7 +19,7 @@ from .views import ServicioListView
 from .views import ProductoListView
 from .views import ReservaListView
 from .views import ClienteListView
-from .views import Inicio, About, Price,Appointment, Contact, Opening, Team
+from .views import Inicio, About, Price,Appointment, Contact, Opening, Team, Suscribir,Contactar
 from .views import CitasCreateView
 
 urlpatterns = [
@@ -47,4 +47,8 @@ urlpatterns = [
     path('clientes/', ClienteListView.as_view(), name='cliente-list'),
     
     path('citas/', CitasCreateView.as_view(), name='citas'),
+    
+    path('suscribirse/',Suscribir.as_view(), name = 'suscribirse'),
+    
+    path('contactanos/',Contactar.as_view(), name = 'contactanos'),
 ]
