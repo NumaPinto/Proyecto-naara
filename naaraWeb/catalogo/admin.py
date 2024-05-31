@@ -70,7 +70,7 @@ class EspecialistasAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 class CitasAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('nombre','correo','fecha','hora','estado','fecha_de_creacion')
     search_fields = ['nombre','correo']
-    resource_class = CistasResource
+    resource_class = CitasResource
 
 
 
