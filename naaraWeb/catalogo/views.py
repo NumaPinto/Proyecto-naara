@@ -201,16 +201,7 @@ class Team(TemplateView):
       
      datos =  list(Especialistas.objects.filter(estado=True))
      
-     informacion =[]
-
-     if len(datos) >= 5:
-     
-        for i in range(5):
-          
-          informacion.append(datos[i])
-        
-    
-     return informacion
+     return datos
 
 
 class Contact(TemplateView):
