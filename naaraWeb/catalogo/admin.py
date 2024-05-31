@@ -67,6 +67,12 @@ class EspecialistasAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     resource_class = EspecialistasResource
     
         
+class ContactanosAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('nombre_cliente','apellido_cliente','telefono_cliente','asunto_cliente','mensaje_cliente','estado','fecha_de_creacion')
+    search_fields = ['nombre_cliente','apellido_cliente','telefono_cliente']
+    resource_class = ContactanosResource
+    
+    
 class CitasAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     list_display = ('nombre','correo','fecha','hora','estado','fecha_de_creacion')
     search_fields = ['nombre','correo']
