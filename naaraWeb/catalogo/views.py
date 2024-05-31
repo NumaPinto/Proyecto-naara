@@ -241,7 +241,7 @@ class ServicioListView(TemplateView):
       
      datos =  list(Servicio.objects.filter(estado=True))
         
-     print(len(datosq))
+     print(len(datos))
     
      return datos
                 
