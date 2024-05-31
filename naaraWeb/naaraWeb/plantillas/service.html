@@ -110,109 +110,76 @@
        
         <div class="owl-carousel service-carousel">
             
+            
+            {% if datos_servicio %}
+
+
+            {% for dato in datos_servicio %}
+
+            
+            
+            
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="">
+                <img class="img-fluid" src="{{dato.imagen_servicio.url}}" alt="">
                 <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Masaje Corporal</h4>
-                    <p class="text-white px-3 mb-3"> Es una técnica de Manipulación de tejidos blandos para relajar, aliviar y rejuvenecer el cuerpo.</p>
+                    <h4 class="text-white font-weight-medium px-3">{{dato.nombre_servicio}}</h4>
+                    <p class="text-white px-3 mb-3">{{dato.descripcion_servicio}}</p>
                     <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
             </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}"  alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Terapias con Piedras</h4>
-                    <p class="text-white px-3 mb-3">Massajes curativos que emplean piedras calientes para aliviar tensiones musculares.</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}"  alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Terapia Facial</h4>
-                    <p class="text-white px-3 mb-3">Tratamiento especializado para rejuvenecer la piel y promover bienestar.</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Proteccion de la Piel</h4>
-                    <p class="text-white px-3 mb-3">medicamento rejuvenecimiento para la piel</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}"  alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Baño de Arroyo</h4>
-                    <p class="text-white px-3 mb-3">Elige el lugar perfecto Sumergirse en aguas naturales de arroyos para relajación y revitalización.</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}"  alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Enmascarecimiento Facial</h4>
-                    <p class="text-white px-3 mb-3">elige la mascarilla desde arcilla hasta moco de gorila</p>
-                    <div class="w-100 bg-white text-center p-4" >
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
+            
+            {% endfor %}
+
+
+            {% else %}
+
+
+            {% endif %}
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
         <div class="row justify-content-center bg-appointment mx-0">
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 class="text-white text-center mb-4">Concertar Cita</h1>
-                    <form>
-                        <div class="form-row">
+                    <form method="post">
+                        {% csrf_token %} <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control bg-transparent p-4" placeholder="Nombres" required="required" />
+                                    {{ form.nombre }}
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control bg-transparent p-4" placeholder="Correo" required="required" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <div class="date" id="Fecha" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <div class="time" id="Hora" data-target-input="nearest">
-                                        <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Hora" data-target="#time" data-toggle="datetimepicker"/>
-                                    </div>
+                                    {{ form.correo }}
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <select class="custom-select bg-transparent px-4" style="height: 47px;">
-                                        <option selected>Elegir Servicio</option>
-                                        <option value="1">Peluqueria</option>
-                                        <option value="2">Manicure y Pedicure</option>
-                                        <option value="3">Masajes Relajantes</option>
-                                    </select>
+                                    {{ form.fecha }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.hora }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.servicio }}
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -281,10 +248,46 @@
                             <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                             <div class="w-100">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary px-4">Registrar</button>
-                                    </div>
+                                    
+                                    
+                                    <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+                        {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
+                                    <button class="btn btn-primary px-4">Registrar</button>
+                                </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

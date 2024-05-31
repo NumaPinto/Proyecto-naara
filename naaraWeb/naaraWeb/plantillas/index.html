@@ -85,7 +85,7 @@
                     </div>
                     <a href={% url "contact" %} class="nav-item nav-link">Contactame</a>
                 </div>
-                <a href="https://wa.me/584122555327" class="boton1">Reservar ahora</a>
+                <a href="#ordernar_cita" class="boton1">Reservar ahora</a>
             </div>
         </nav>
     </div>
@@ -110,7 +110,7 @@
                             <p class="mx-md-5 px-5">
                                 Ofrecemos todo tipo de tratamientos para el bienestar y que se adapte a tu necesidad
                             </p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#ordernar_cita">Concretar Cita</a>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                             <p class="mx-md-5 px-5">
                                 Contamos con los profesionales en el area, donde ofrecemos el tratamiento facial que se adapte a tu requerimiento
                             </p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#ordernar_cita">Concretar Cita</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +136,7 @@
                             <p class="mx-md-5 px-5">
                                 Damos el maasaje relajante y todos los componentes para eliminar esas celulitis
                             </p>
-                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="https://wa.me/584122555327">Concretar Cita</a>
+                            <a class="btn btn-outline-light py-3 px-4 mt-3 animate__animated animate__fadeInUp" href="#ordernar_cita">Concretar Cita</a>
                         </div>
                     </div>
                 </div>
@@ -164,10 +164,22 @@
                 </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block clase1 text-uppercase fondo3  py-1 px-2">Acerca de Nosotros</h6>
-                    <h2 class="mb-4">NAARA es un emprendimiento que nace con la concepción de brindar un espaciodedicado a la belleza y bienestar</h2>
-                    <p class="pl-4 border-left border-primary">
-                        Ofreciendo una experiencia holística que nutra el cuerpoy el alma.A través de distintas terapias, tratamientos estéticos, terapéuticos y de belleza,buscamos realzar la vitalidad y frescura, donde cada visita a nuestros espacios sea unaoportunidad para sumergirse en un oasis lleno de agradables experiencias, que permitandesconectarse de la rutina diaria y transitar por un viaje sensorial único.Nos rodeamos de un ambiente sublime y elegante, donde cada detalle ha sidodiseñado para el disfrute y confort de nuestros clientes, de la mano de expertos altamentecalificados, que brindaran atención dedicada y cordial, con equipos y tecnología de últimageneración, garantizando resultados óptimos.NAARA, más que una experiencia... es un en un estilo de vida.
-                    </p>
+                    
+                    
+                    {% if datos_pagina %}
+                    
+                    <h2 class="mb-4">{{datos_pagina.0.informacion}}</h2>
+                    <p class="pl-4 border-left border-primary">{{datos_pagina.0.acerca}}</p>
+                    
+                    
+                    {% else %}
+
+
+                     {% endif %}
+                    
+                    
+                    
+                    
                     <div class="row pt-3">
                         <div class="col-6">
                             <div class="fondo3 text-center p-4">
@@ -199,83 +211,41 @@
         </div>
         <div class="owl-carousel service-carousel">
 
+           
+           {% if datos_servicio %}
+
+
+            {% for dato in datos_servicio %}
+
+            
+            
+            
             <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-1.jpg' %}" alt="">
+                <img class="img-fluid" src="{{dato.imagen_servicio.url}}" alt="">
                 <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Masaje Corporal</h4>
-                    <p class="text-white px-3 mb-3">
-                        Es una técnica de Manipulación de tejidos blandos para relajar, aliviar y rejuvenecer el cuerpo.
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
+                    <h4 class="text-white font-weight-medium px-3">{{dato.nombre_servicio}}</h4>
+                    <p class="text-white px-3 mb-3">{{dato.descripcion_servicio}}</p>
+                    <div class="w-100 bg-white text-center p-4" >
                         <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
                     </div>
                 </div>
             </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-2.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Terapias con Piedras</h4>
-                    <p class="text-white px-3 mb-3">
-                        Massajes curativos que emplean piedras calientes para aliviar tensiones musculares.
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
-                        <a class="btn btn-primary" href="">Make Order</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-3.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Terapia Facial</h4>
-                    <p class="text-white px-3 mb-3">
-                        Tratamiento especializado para rejuvenecer la piel y promover bienestar.
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-4.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Proteccion de la Piel</h4>
-                    <p class="text-white px-3 mb-3">
-                        medicamento rejuvenecimiento para la piel
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-5.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Baño de Arroyo</h4>
-                    <p class="text-white px-3 mb-3">
-                        Elige el lugar perfecto Sumergirse en aguas naturales de arroyos para relajación y revitalización.
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
-            <div class="service-item position-relative">
-                <img class="img-fluid" src="{% static 'img/service-6.jpg' %}" alt="">
-                <div class="service-text text-center">
-                    <h4 class="text-white font-weight-medium px-3">Enmascarecimiento Facial</h4>
-                    <p class="text-white px-3 mb-3">
-                        elige la mascarilla desde arcilla hasta moco de gorila
-                    </p>
-                    <div class="w-100 bg-white text-center p-4">
-                        <a class="btn btn-primary" href="https://wa.me/584122555327">Hacer Orden</a>
-                    </div>
-                </div>
-            </div>
+            
+            {% endfor %}
+
+
+            {% else %}
+
+
+            {% endif %}
+            
+           
+            
         </div>
         <div class="row justify-content-center bg-appointment mx-0">
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
-                    <h1 class="text-white text-center mb-4">Concertar Cita</h1>
+                    <h1 id ="ordernar_cita" class="text-white text-center mb-4">Concertar Cita</h1>
                     <form method="post">
                         {% csrf_token %} <div class="form-row">
                             <div class="col-sm-6">
@@ -319,26 +289,26 @@
     <!-- Service End -->
 
 
-    <!-- Open Hours Start -->
+      <!-- Open Hours Start -->
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="{% static 'img/opening.jpg' %}" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{% static 'img/opening.jpg' %}"  style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="hours-text bg-light p-4 p-lg-5 my-lg-5">
-                        <h6 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Horario</h6>
-                        <h1 class="mb-4">Limpieza Facial y Nutrición Celular</h1>
-                        <p>
-                            Tratamiento facial avanzado que combina técnicas de limpieza profunda y nutrición celular para promover la salud y la vitalidad de la piel.
-                        </p>
+                        <h3 class="d-inline-block text-white text-uppercase bg-primary py-1 px-2">Nuestro Horario de Consultas</h3>
+                        <h1 class="mb-4">Medicina Estetica</h1>
                         <ul class="list-inline">
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Lunes – Viernes : 9:00 AM - 7:00 PM</li>
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Sabados : 9:00 AM - 6:00 PM</li>
-                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Domingo : Cerrado.</li>
+                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Lunes : 8:00 AM - 7:00 PM (Dra. Yasnely Cedeño)</li>
+                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Martes y Jueves : 1:00 PM - 7:00 PM (Dr. Ali Ghanain)</li>
+                            <h1 class="mb-4">Nutricionista</h1>
+                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Martes y Sabado : 8:00 AM - 1:00 PM (Dra.Stephanie Ricca).</li>
+                            <h1 class="mb-4">Dermatología</h1>
+                            <li class="h6 py-1"><i class="far fa-circle text-primary mr-3"></i>Viernes : 8:00 AM - 7:00 PM (Dra.Stephanie Ricca).</li>
                         </ul>
                         <a href="https://wa.me/584122555327" class="btn btn-primary mt-2">Reservar Ahora</a>
                     </div>
@@ -556,9 +526,48 @@
                             <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                             <div class="w-100">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary px-4">Registrar</button>
+                                    
+
+             
+             
+            <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+               {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
+                                    <button class="btn btn-primary px-4">Registrar</button>
+                                </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+             
+                                 
+                                        
                                     </div>
                                 </div>
                             </div>

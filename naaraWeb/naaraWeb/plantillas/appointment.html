@@ -119,51 +119,42 @@
                 <div class="col-lg-6 py-5">
                     <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                         <h1 class="text-white text-center mb-4">Solicite cita</h1>
-                        <form>
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control bg-transparent p-4" placeholder="Nombres" required="required" />
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control bg-transparent p-4" placeholder="Apellidos" required="required" />
-                                    </div>
+                        <form method="post">
+                        {% csrf_token %} <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.nombre }}
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="date" id="date" data-target-input="nearest">
-                                            <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Selecciones Fecha" data-target="#date" data-toggle="datetimepicker"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="time" id="time" data-target-input="nearest">
-                                            <input type="text" class="form-control bg-transparent p-4 datetimepicker-input" placeholder="Seleccione Hora" data-target="#time" data-toggle="datetimepicker"/>
-                                        </div>
-                                    </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.correo }}
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <select class="custom-select bg-transparent px-4" style="height: 47px;">
-                                            <option selected>Seleccione Servicio</option>
-                                            <option value="1">Service 1</option>
-                                            <option value="2">Service 1</option>
-                                            <option value="3">Service 1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button class="btn btn-primary btn-block" type="submit" style="height: 47px;">Concertar Cita</button>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.fecha }}
                                 </div>
                             </div>
-                        </form>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.hora }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form.servicio }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px;">Generar Cita</button>
+                            </div>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -251,11 +242,46 @@
                                 <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                                 <div class="w-100">
                                     <div class="input-group">
-                                        <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary px-4">Registrar</button>
-                                        </div>
-                                    </div>
+                                        
+                                        
+                                       <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+                           {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
+                                    <button class="btn btn-primary px-4">Registrar</button>
+                                </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

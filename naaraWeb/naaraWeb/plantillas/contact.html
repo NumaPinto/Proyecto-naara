@@ -107,28 +107,66 @@
                         <h3 class="d-inline-block  text-uppercase clase4 py-1 px-2">Contactanos</h3>
                         
                         <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                        
+                        
+                        <form action="{% url 'contactanos' %}" method="post" name="sentMessage"  novalidat>
+                            
+                           {% csrf_token %}
+                            
+                            
+                            
                             <div class="form-row">
                                 <div class="col-sm-6 control-group">
+                                    
+                                    
                                     <input type="text" class="form-control border-0 p-4" id="name" placeholder="Nombre"
-                                        required="required" data-validation-required-message="Please enter your name" />
+                                        required="required" data-validation-required-message="Please enter your name" name="nombre_cliente" />
+                                        
+                                        
+                        
+                                        
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control border-0 p-4" id="email" placeholder="Correo"
-                                        required="required" data-validation-required-message="Please enter your email" />
+                                    
+                                    
+                                    
+                        <input type="text" class="form-control border-0 p-4" id="name" placeholder="Apellido"
+                                        required="required" data-validation-required-message="Please enter your name" name="apellido_cliente" />
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                            
+                            
+                            
                             <div class="control-group">
+                                
+                                
+                        <input type="number" class="form-control border-0 p-4" id="subject" placeholder="Teléfono"
+                                    required="required" data-validation-required-message="Please enter a subject" name="telefono_cliente"/>
+                                    
+                        <p class="help-block text-danger"></p>
+                                
+                        <input type="email" class="form-control border-0 p-4" id="email" placeholder="Correo"
+                                        required="required" data-validation-required-message="Please enter your email" name="correo_cliente" />
+                        
+                        <p class="help-block text-danger"></p>
+                                        
                                 <input type="text" class="form-control border-0 p-4" id="subject" placeholder="Asunto"
-                                    required="required" data-validation-required-message="Please enter a subject" />
+                                    required="required" data-validation-required-message="Please enter a subject" name="asunto_cliente" />
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div class="control-group">
                                 <textarea class="form-control border-0 py-3 px-4" rows="3" id="message" placeholder="Mensaje"
                                     required="required"
-                                    data-validation-required-message="Please enter your message"></textarea>
+                                    data-validation-required-message="Please enter your message"name="mensaje_cliente"></textarea>
                                 <p class="help-block text-danger"></p>
                             </div>
                             <div>
@@ -194,10 +232,48 @@
                         <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                         <div class="w-100">
                             <div class="input-group">
-                                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                <div class="input-group-append">
+                                
+                                
+                                
+                               <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+                           {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
                                     <button class="btn btn-primary px-4">Registrar</button>
                                 </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>

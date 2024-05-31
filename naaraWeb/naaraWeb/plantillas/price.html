@@ -247,10 +247,46 @@
                             <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                             <div class="w-100">
                                 <div class="input-group">
-                                    <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary px-4">Registrar</button>
-                                    </div>
+                                    
+                                    
+                                   <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+               {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
+                                    <button class="btn btn-primary px-4">Registrar</button>
+                                </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>

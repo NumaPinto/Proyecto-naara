@@ -115,104 +115,49 @@
             </div>
         </div>
         <div class="row">
-        
-            <div class="col-lg-3 col-md-6">
-
-            <div class="team position-relative overflow-hidden mb-5">
-                <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
-                <div class="position-relative text-center">
-                    <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">Dra. Yasnely Cedeño</h5>
-                        <p class="m-0">Especialista en Medicina Estetica</p>
-                    </div>
-                    <div class="team-social bg-dark text-center">
             
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-              
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div> 
-
-        </div>
+            {% if datos_especialista %}
 
 
+            {% for dato in datos_especialista %}
 
-        <div class="col-lg-3 col-md-6">
-            <div class="team position-relative overflow-hidden mb-5">
-                <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
-                <div class="position-relative text-center">
-                    <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">Dr. Ali Ghanain</h5>
-                        <p class="m-0">Especialista en Medicina Estetica</p>
-                    </div>
-                    <div class="team-social bg-dark text-center">
-                    
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                   
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
             <div class="col-lg-3 col-md-6">
-            <div class="team position-relative overflow-hidden mb-5">
-                <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
-                <div class="position-relative text-center">
-                    <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">Dra. Stephanie Ricca</h5>
-                        <p class="m-0">Medico Nutricionista</p>
-                    </div>
-                    <div class="team-social bg-dark text-center">
-                   
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                 
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        
-            <div class="col-lg-3 col-md-6">
             <div class="team position-relative overflow-hidden mb-5">
-                <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                <img class="img-fluid" src="{{dato.foto_especialista.url}}" alt="">
+
                 <div class="position-relative text-center">
                     <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">Dra. Day Mesa</h5>
-                        <p class="m-0">Dermatologo</p>
+
+                        <h5 class="text-white text-uppercase">{{dato.nombre_especialista}} {{dato.apellido_especialista}}</h5>
+
+                        <p class="m-0">
+                            {{dato.especialidad_especialista}}
+                        </p>
+
                     </div>
                     <div class="team-social bg-dark text-center">
 
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-           
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-primary btn-square mr-2" href="{{datos_especialista.facebook}}"><i class="fab fa-facebook-f"></i></a>
+
+                        <a class="btn btn-outline-primary btn-square" href="{{datos_especialista.instagram}}"><i class="fab fa-instagram"></i></a>
+
                     </div>
                 </div>
             </div>
+            
         </div>
 
-            <div class="col-lg-3 col-md-6">
-            <div class="team position-relative overflow-hidden mb-5">
-                <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="">
-                <div class="position-relative text-center">
-                    <div class="team-text bg-primary text-white">
-                        <h5 class="text-white text-uppercase">Darlys Valero</h5>
-                        <p class="m-0">Maquilladora</p>
-                    </div>
-                    <div class="team-social bg-dark text-center">
-
-                        <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-           
-                        <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-           </div>
 
 
+            {% endfor %}
 
+
+            {% else %}
+
+
+            {% endif %}
+            
 
 
         </div>
@@ -273,10 +218,47 @@
                         <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                         <div class="w-100">
                             <div class="input-group">
-                                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                <div class="input-group-append">
+                                
+                                
+                                
+                               <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+                           {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
                                     <button class="btn btn-primary px-4">Registrar</button>
                                 </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>

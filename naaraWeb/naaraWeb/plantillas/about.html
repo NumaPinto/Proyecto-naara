@@ -115,8 +115,21 @@
            </div>
                 <div class="col-lg-6">
                     <h6 class="d-inline-block clase1 text-uppercase fondo3  py-1 px-2">Acerca de Nosotros</h6>
-                    <h2 class="mb-4">NAARA es un emprendimiento que nace con la concepción de brindar un espaciodedicado a la belleza y bienestar</h2>
-                    <p class="pl-4 border-left border-primary">Ofreciendo una experiencia holística que nutra el cuerpoy el alma.A través de distintas terapias, tratamientos estéticos, terapéuticos y de belleza,buscamos realzar la vitalidad y frescura, donde cada visita a nuestros espacios sea unaoportunidad para sumergirse en un oasis lleno de agradables experiencias, que permitandesconectarse de la rutina diaria y transitar por un viaje sensorial único.Nos rodeamos de un ambiente sublime y elegante, donde cada detalle ha sidodiseñado para el disfrute y confort de nuestros clientes, de la mano de expertos altamentecalificados, que brindaran atención dedicada y cordial, con equipos y tecnología de últimageneración, garantizando resultados óptimos.NAARA, más que una experiencia... es un en un estilo de vida.</p>
+                    
+                
+                    
+                    {% if datos_pagina %}
+                    
+                    <h2 class="mb-4">{{datos_pagina.0.informacion}}</h2>
+                    <p class="pl-4 border-left border-primary">{{datos_pagina.0.acerca}}</p>
+                    
+                    
+                    {% else %}
+
+
+                     {% endif %}
+            
+                    
                     <div class="row pt-3">
                         <div class="col-6">
                             <div class="fondo3 text-center p-4">
@@ -131,6 +144,13 @@
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -190,10 +210,52 @@
                         <h5 class="text-white text-uppercase mb-4">suscribete</h5>
                         <div class="w-100">
                             <div class="input-group">
-                                <input type="text" class="form-control border-light" style="padding: 30px;" placeholder="Ingrese su Correo">
-                                <div class="input-group-append">
+                                
+                                
+                                
+                                <form action="{% url 'suscribirse' %}" method="post" class="form-footer-subscribe">
+               {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    <input type="text" class="form-control border-light" style="padding: 10px;" placeholder="Ingrese su Correo" name="correo" >
+                                        
+                                        
+                        
+                                        
+                                    
+                                </div>
+                                <div class="col-sm-6 control-group">
+                                    
+                                    
+                                    
+                        <div class="input-group-append">
                                     <button class="btn btn-primary px-4">Registrar</button>
                                 </div>
+                                        
+                                    
+                                    
+                                    
+                                        
+                                        
+                                        
+                                  
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            
+                        </form>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                             </div>
                         </div>
                     </div>
