@@ -90,7 +90,7 @@ WSGI_APPLICATION = 'naaraWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'naara',
+        'NAME': 'naaraweb',
         'USER': 'numa',
         'PASSWORD': '1DiosAmo',
         'HOST': 'localhost',
