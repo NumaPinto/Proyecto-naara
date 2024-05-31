@@ -208,8 +208,8 @@ class Contact(TemplateView):
 
     template_name = "contact.html"
 
-class ServicioListView(ListView):
-    model = Servicio
+class ServicioListView(TemplateView):
+ 
     template_name ="service.html"
     
     
