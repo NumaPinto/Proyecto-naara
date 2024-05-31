@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h06b)-eu77b-ewx%wcur)l!!6sz!&*a5rum5akh9_v9oc)!(kd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -35,7 +35,9 @@ EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_PORT = 587
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['128.199.11.234','www.naarasalonyspa.com','naarasalonyspa.com']
+
+STATICFILES_DIRS = ['static/'] 
 
 
 # Application definition
@@ -87,11 +89,15 @@ WSGI_APPLICATION = 'naaraWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'naara',
+        'USER': 'numa',
+        'PASSWORD': '1DiosAmo',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -128,9 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = ['static/'] 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL  = 'media/'
+MEDIA_ULR = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
