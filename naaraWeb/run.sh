@@ -22,9 +22,10 @@ DJANGO_SETTINGS_MODULE=naaraWeb.settings
 # Módulo WSGI de Django que se utilizará para la aplicación
 DJANGO_WSGI_MODULE=naaraWeb.wsgi
 
-echo "Starting $NAME as 'whoami'"
+echo "Corriendo Proyecto $NAME "
 
 cd $DJANGODIR
+
 
 # Activar el entorno virtual
 source venv/bin/activate
