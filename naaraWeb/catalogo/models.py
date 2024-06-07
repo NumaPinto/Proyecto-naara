@@ -16,7 +16,7 @@ class Servicio(ModeloBase):
     nombre_servicio = models.CharField("Nombre del Servicio",max_length=100)
     descripcion_servicio = models.TextField("Descripción del Servicio")
     precio_servicio = models.DecimalField("Precio del Servicio",max_digits=10, decimal_places=2)
-    imagen_servicio = models.ImageField("Imagen del Servicio",upload_to="img/", blank=False, null=False)
+    imagen_servicio = models.ImageField("Imagen del Servicio",upload_to="img/", blank=True, null=True)
     
     class Meta:
       verbose_name="Servicio"
@@ -31,7 +31,7 @@ class Producto(ModeloBase):
     descripcion_producto = models.TextField("Descripción del Producto")
     precio_producto = models.DecimalField("Precio del Producto",max_digits=10, decimal_places=2)
     cantidad_disponible_producto = models.PositiveIntegerField("Cantidad de Productos")
-    imagen_producto = models.ImageField("Imagen del Producto",upload_to="img/", blank=False, null=False)
+    imagen_producto = models.ImageField("Imagen del Producto",upload_to="img/", blank=True, null=True)
     
     class Meta:
       verbose_name="Producto"
@@ -105,7 +105,7 @@ class Especialistas(ModeloBase):
     especialidad_especialista = models.CharField("Especialidad",max_length=100)
     telefono_especialista = models.CharField("Teléfono",max_length=15)
     correo_especialista = models.EmailField("Correo")
-    foto_especialista= models.ImageField("Foto",upload_to="img/", blank=False, null=False)
+    foto_especialista= models.ImageField("Foto",upload_to="img/", blank=True, null=True)
     web =models.URLField("Pagina Web", null=True,blank=True)
     facebook =models.URLField("Facebook", null=True,blank=True)
     instagram =models.URLField("Instagram", null=True,blank=True)
