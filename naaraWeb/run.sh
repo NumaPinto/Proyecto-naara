@@ -25,8 +25,9 @@ DJANGO_WSGI_MODULE=naaraWeb.wsgi
 echo "Starting $NAME as 'whoami'"
 
 # Activar el entorno virtual
-cd $DJANGODIR
 source venv/bin/activate
+
+cd $DJANGODIR
 export DJANGO_SETTINGS_MODULE=$DJANGO_SETTINGS_MODULE
 export PYTHONPATH=$DJANGODIR:$PYTHONPATH
 
