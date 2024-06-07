@@ -26,7 +26,6 @@ echo "Corriendo Proyecto $NAME "
 
 cd $DJANGODIR
 
-
 # Activar el entorno virtual
 source venv/bin/activate
 
