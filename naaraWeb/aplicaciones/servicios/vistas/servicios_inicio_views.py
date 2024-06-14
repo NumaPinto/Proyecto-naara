@@ -43,18 +43,28 @@ class InicioView(CreateView):
         return render(request,self.template_name,resultado)
         
     def __get_informacion_especilistas(self,modelo):
-      
-     datos =  list(modelo.objects.filter(estado=True))
-     
-     informacion =[]
-
-     if len(datos) >= 5:
-     
-        for i in range(5):
           
-          informacion.append(datos[i])
-        
-     return informacion
+         datos =  list(modelo.objects.filter(estado=True))
+         
+         informacion =[]
+         
+         doctores = []
+    
+         if len(datos) >= 4:
+         
+            for i in range(len(datos)):
+                
+              if datos[i].nombre_especialista.startswith("Dr.") or datos[i].nombre_especialista.startswith("Dra."):
+                  
+                  informacion.append(datos[i])
+                 
+              if len(informacion) >= 4:
+                  
+                  for j in range(4):
+                     
+                      doctores.append(informacion[j])
+            
+         return doctores
      
     def __get_informacion_servicios(self):
         
