@@ -20,7 +20,7 @@ class TeamView(TemplateView):
      
      informacion = []
      
-     for i in len(datos):
+     for i in range(len(datos)):
        
          
        if datos[i].nombre_especialista.startswith("Dr.") or datos[i].nombre_especialista.startswith("Dra."):
@@ -28,7 +28,7 @@ class TeamView(TemplateView):
         
             informacion.append(datos[i])
               
-     for j in len(datos):
+     for j in range(len(datos)):
        
        if datos[j].nombre_especialista.startswith("Dr.") or datos[j].nombre_especialista.startswith("Dra."):
          
