@@ -36,7 +36,7 @@ class TeamView(TemplateView):
    
        else:
  
-          informacion.append(datos[i])
+          informacion.append(datos[j])
              
      return informacion
      
