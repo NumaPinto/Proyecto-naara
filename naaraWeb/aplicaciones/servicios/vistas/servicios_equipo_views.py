@@ -31,7 +31,7 @@ class TeamView(TemplateView):
      
      for n in range(len(informacion)):
   
-       if informacion[n].nombre_especialista.startswith("Dra."):
+       if informacion[n].nombre_especialista.startswith("Dr."):
        
          doctores.append(informacion[n])
        else:
