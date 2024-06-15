@@ -18,4 +18,22 @@ class TeamView(TemplateView):
       
      datos =  list(Especialistas.objects.filter(estado=True))
      
-     return datos
+     informacion = []
+     
+     for i in len(datos):
+         
+         if datos[i].nombre_especialista.startswith("Dr.") or datos[i].nombre_especialista.startswith("Dra."):
+        
+              informacion.append(datos[i])
+              
+     for j in len(datos):
+         
+         if datos[j].nombre_especialista.startswith("Dr.") or datos[j].nombre_especialista.startswith("Dra."):
+             
+         else:
+             
+             informacion.append(datos[i])
+              
+        
+     return informacion
+     
