@@ -20,7 +20,7 @@ class TeamView(TemplateView):
      
      informacion = []
      
-     doctores = []
+     especialistas = []
      
      for i in range(len(datos)):
       
@@ -31,24 +31,53 @@ class TeamView(TemplateView):
      for n in range(len(informacion)):
   
        if informacion[n].nombre_especialista.startswith("Dr."):
-       
-         doctores.append(informacion[n])
+
+         especialistas.append(informacion[n])
          
      for m in range(len(informacion)):
                      
          if informacion[m].nombre_especialista.startswith("Dra."):
            
-           doctores.append(informacion[m])
-                     
-     for j in range(len(datos)):
+           especialistas.append(informacion[m])
+          
+     for a in range(len(datos)):
        
-       if datos[j].nombre_especialista.startswith("Dr.") or datos[j].nombre_especialista.startswith("Dra."):
+       if datos[a].especialidad_especialista.startswith("Enfermera"):
+       
+       especialistas.append(datos[a])
+       
+     for b in range(len(datos)):
+       
+       if datos[b].especialidad_especialista.startswith("Cosmetóloga"):
+       
+       especialistas.append(datos[b])
+
+       
+     for c in range(len(datos)):
+       
+       if datos[c].especialidad_especialista.startswith("Masoterapeuta"):
+       
+       especialistas.append(datos[c])
+
+       
+     for d in range(len(datos)):
+       
+       if datos[d].especialidad_especialista.startswith("Estilista"):
          
-         nada = []
-        
-       else:
- 
-          doctores.append(datos[j])
-             
-     return doctores
+       especialistas.append(datos[d])
+
+       
+     for f in range(len(datos)):
+       
+       if datos[f].especialidad_especialista.startswith("Manicurista"):
+       
+       especialistas.append(datos[f])
+       
+     for g in range(len(datos)):
+       
+       if datos[g].especialidad_especialista.startswith("Atención al Cliente"):
+       
+       especialistas.append(datos[g])
+       
+     return especialistas
      
