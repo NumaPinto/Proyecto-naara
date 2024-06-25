@@ -41,7 +41,7 @@ class InicioView(CreateView):
         
         if informacion_especialistas:
           
-          numero_especialistas = len(informacion_especilistas)
+          numero_especialistas = len(informacion_especialistas)
         
        
         resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas}
