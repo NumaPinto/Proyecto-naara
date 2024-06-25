@@ -39,7 +39,7 @@ class InicioView(CreateView):
         
         numero_especialistas = 0
         
-        if informacion_especilistas:
+        if informacion_especialistas:
           
           numero_especialistas = len(informacion_especilistas)
         
