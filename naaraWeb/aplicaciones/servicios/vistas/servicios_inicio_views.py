@@ -44,7 +44,7 @@ class InicioView(CreateView):
           numero_especialistas = len(informacion_especilistas)
         
        
-        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina:"numero_especialistas",numero_especialistas}
+        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas}
 
         return render(request,self.template_name,resultado)
         
