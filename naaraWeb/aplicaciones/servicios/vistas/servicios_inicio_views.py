@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio
-from aplicaciones.servicios.modelos.servicios_usuarios_models import Citas, Clientes
+from aplicaciones.servicios.modelos.servicios_usuarios_models import Citas, Cliente
 from aplicaciones.servicios.modelos.servicios_atencion_models import Especialistas, InformacionPagina
 from aplicaciones.servicios.formularios.servicios_citas_froms import CitasForm
 
@@ -102,7 +102,7 @@ class InicioView(CreateView):
     
     def __get_informacion_clientes(self):
         
-        datos_clientes =  list(Clientes.objects.filter(estado=True))
+        datos_clientes =  list(Cliente.objects.filter(estado=True))
         
         return datos_clientes
 
