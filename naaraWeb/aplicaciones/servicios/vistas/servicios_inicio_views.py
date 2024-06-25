@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio
-from aplicaciones.servicios.modelos.servicios_usuarios_models import Citas
+from aplicaciones.servicios.modelos.servicios_usuarios_models import Citas, Clientes
 from aplicaciones.servicios.modelos.servicios_atencion_models import Especialistas, InformacionPagina
 from aplicaciones.servicios.formularios.servicios_citas_froms import CitasForm
 
@@ -37,14 +37,22 @@ class InicioView(CreateView):
     
         formulario_citas = FormularioCitas().get_formulario_citas()
         
+        numero_clientes = self.__get_informacion_clientes()
+        
         numero_especialistas = 0
+        
+        numero_de_clientes = 0
         
         if informacion_especialistas:
           
           numero_especialistas = len(informacion_especialistas)
+          
+        if numero_clientes:
+          
+          numero_de_clientes = len(numero_clientes)
         
        
-        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas}
+        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas,"numero_clientes":numero_de_clientes}
 
         return render(request,self.template_name,resultado)
         
@@ -91,6 +99,13 @@ class InicioView(CreateView):
         datos =  list(InformacionPagina.objects.filter(estado=True))
         
         return datos
+    
+    def __get_informacion_clientes(self):
+        
+        datos_clientes =  list(Clientes.objects.filter(estado=True))
+        
+        return datos_clientes
+
      
     def post(self,request,*args,**kwargs):
             form = CitasForm(request.POST)
