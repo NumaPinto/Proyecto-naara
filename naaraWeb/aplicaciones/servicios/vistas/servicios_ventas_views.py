@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, TemplateView
-from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio, Producto
+from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio, Producto, Planes
 from aplicaciones.servicios.formularios.servicios_citas_froms import CitasForm
 
 '''Clase que gestiona el formulario de las Citas  '''
@@ -16,6 +16,25 @@ class FormularioCitas(object):
 class PriceView(TemplateView):
 
     template_name = "price.html"
+    
+    
+    def get(self,request,*args,**kwargs):
+    
+         informacion_planes =self.__get_informacion_planes()
+        
+         resultado = {"datos_planes":informacion_planes
+                       }
+
+         return render(request,self.template_name,resultado)
+         
+    def __get_informacion_planes(self):
+      
+     datos =  list(Planes.objects.filter(estado=True))
+        
+    
+     return datos
+
+    
 
 
 class AppointmentView(TemplateView):

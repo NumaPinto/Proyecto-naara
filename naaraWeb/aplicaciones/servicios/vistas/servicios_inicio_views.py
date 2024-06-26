@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
-from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio
+from aplicaciones.servicios.modelos.servicios_ventas_models import Servicio, Planes
 from aplicaciones.servicios.modelos.servicios_usuarios_models import Citas, Cliente
 from aplicaciones.servicios.modelos.servicios_atencion_models import Especialistas, InformacionPagina
 from aplicaciones.servicios.formularios.servicios_citas_froms import CitasForm
@@ -39,6 +39,9 @@ class InicioView(CreateView):
         
         numero_clientes = self.__get_informacion_clientes()
         
+        informacion_planes =self.__get_informacion_planes()
+
+        
         numero_especialistas = 0
         
         numero_de_clientes = 0
@@ -52,7 +55,7 @@ class InicioView(CreateView):
           numero_de_clientes = len(numero_clientes)
         
        
-        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas,"numero_clientes":numero_de_clientes}
+        resultado = {"datos_especialista":informacion_especialistas,"form":formulario_citas,"datos_servicio":informacion_servicio,"datos_pagina":informacion_pagina,"numero_especialistas":numero_especialistas,"numero_clientes":numero_de_clientes,"datos_planes":informacion_planes}
 
         return render(request,self.template_name,resultado)
         
@@ -105,7 +108,13 @@ class InicioView(CreateView):
         datos_clientes =  list(Cliente.objects.filter(estado=True))
         
         return datos_clientes
-
+        
+    def __get_informacion_planes(self):
+      
+        datos =  list(Planes.objects.filter(estado=True))
+        
+    
+        return datos
      
     def post(self,request,*args,**kwargs):
             form = CitasForm(request.POST)

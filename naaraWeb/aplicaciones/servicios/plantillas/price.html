@@ -106,47 +106,44 @@
                 <div class="col-lg-7 pt-5 pb-lg-5">
                     <div class="pricing-text bg-light p-4 p-lg-5 my-lg-5">
                         <div class="owl-carousel pricing-carousel">
+                        
+            {% if datos_planes %}
+
+
+            {% for dato in datos_planes %}
+
                             <div class="bg-white">
                                 <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                   
-                                    <h5 class="text-primary text-uppercase m-0">DÍa de SPA</h5>
+
+                                    <h5 class="text-primary text-uppercase m-0">{{dato.nombre_plan}}</h5>
                                 </div>
                                 <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Masaje Relajante</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Limpieza Facial</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Lavado y Secado de Cabello</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Copa de Vino</p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>{{dato.descripcion_plan_I}}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>{{dato.descripcion_plan_II}}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>{{descripcion_plan_III}}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>{{dato.descripcion_plan_IV}}
+                                    </p>
+                                    <p>
+                                        <i class="fa fa-check text-success mr-2"></i>{{dato.descripcion_plan_V}}
+                                    </p>
                                     <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Ordenar Ahora</a>
                                 </div>
                             </div>
-                            <div class="bg-white">
-                                <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                  
-                                    <h5 class="text-primary text-uppercase m-0">Family Plan</h5>
-                                </div>
-                                <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Full Body Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Hot Stone Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Tissue Body Polish</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Foot & Nail Care</p>
-                                    <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Ordenar Ahora</a>
-                                </div>
-                            </div>
-                            <div class="bg-white">
-                                <div class="d-flex align-items-center justify-content-between border-bottom border-primary p-4">
-                                   
-                                    <h5 class="text-primary text-uppercase m-0">VIP Plan</h5>
-                                </div>
-                                <div class="p-4">
-                                    <p><i class="fa fa-check text-success mr-2"></i>Full Body Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Deep Tissue Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Hot Stone Massage</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Tissue Body Polish</p>
-                                    <p><i class="fa fa-check text-success mr-2"></i>Foot & Nail Care</p>
-                                    <a href="https://wa.me/584122555327" class="btn btn-primary my-2">Reservar Ahora</a>
-                                </div>
-                            </div>
+              {% endfor %}
+
+
+            {% else %}
+
+
+            {% endif %}
+                  
                         </div>
                     </div>
                 </div>
