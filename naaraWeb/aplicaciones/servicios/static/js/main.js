@@ -107,33 +107,3 @@
     
 })(jQuery);
 
-$(function () {
-        $('#datetimepicker1').datetimepicker({
-            format: 'L',  // Formato para la fecha
-            icons: {
-                time: 'fa fa-clock',
-                date: 'fa fa-calendar',
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-calendar-check',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            }
-        });
-        $('#datetimepicker2').datetimepicker({
-            format: 'LT',  // Formato para la hora
-            icons: {
-                time: 'fa fa-clock',
-                date: 'fa fa-calendar',
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-calendar-check',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            }
-        });
-    });
