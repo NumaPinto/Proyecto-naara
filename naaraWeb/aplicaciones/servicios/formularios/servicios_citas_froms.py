@@ -20,3 +20,6 @@ class CitasForm(forms.ModelForm):
             'correo': forms.EmailInput(attrs={'class': 'form-control bg-transparent p-4', 'placeholder': 'Correo'}),
             'servicio': forms.Select(attrs={'class': 'custom-select bg-transparent px-4', 'style': 'height: 47px;', 'option': 'Elegir Servicios'}),
         }
+    def __init__(self, *args, **kwargs):
+             super().__init__(*args, **kwargs)
+             self.fields['servicio'].empty_label = 'Elegir Servicio'
