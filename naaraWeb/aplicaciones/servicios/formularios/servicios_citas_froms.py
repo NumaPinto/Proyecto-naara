@@ -6,19 +6,17 @@ class CitasForm(forms.ModelForm):
         model = Citas
         fields = ['nombre', 'correo', 'fecha', 'hora', 'servicio']
         widgets = {
-            'fecha': forms.DateTimeInput(attrs={
-                'class': 'form-control bg-transparent p-4 datetimepicker-input',
+            'fecha': forms.DateInput(attrs={
+                'class': 'form-control bg-transparent p-4',
                 'placeholder': 'Fecha',
-                'data-target': '#datetimepicker1',
-                'data-toggle': 'datetimepicker'
+                'type': 'date'
             }),
             'hora': forms.TimeInput(attrs={
-                'class': 'form-control bg-transparent p-4 datetimepicker-input',
+                'class': 'form-control bg-transparent p-4',
                 'placeholder': 'Hora',
-                'data-target': '#datetimepicker2',
-                'data-toggle': 'datetimepicker'
+                'type': 'time'
             }),
             'nombre': forms.TextInput(attrs={'class': 'form-control bg-transparent p-4', 'placeholder': 'Nombres'}),
             'correo': forms.EmailInput(attrs={'class': 'form-control bg-transparent p-4', 'placeholder': 'Correo'}),
-            'servicio': forms.Select(attrs={'class': 'custom-select bg-transparent px-4', 'style': 'height: 47px;','option':'Elegir Servicios'}),
+            'servicio': forms.Select(attrs={'class': 'custom-select bg-transparent px-4', 'style': 'height: 47px;', 'option': 'Elegir Servicios'}),
         }
