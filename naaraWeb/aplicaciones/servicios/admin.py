@@ -101,7 +101,7 @@ class ClienteAdmin(ImportExportModelAdmin,admin.ModelAdmin):
 
 
 admin.site.register(Servicio,ServicioAdmin) 
-admin.site.register(Producto,PaginaAdmin)
+admin.site.register(Producto,ProductoAdmin)
 admin.site.register(Reserva,ReservaAdmin)
 admin.site.register(Cliente,ClienteAdmin)
 admin.site.register(InformacionPagina,InformacionPaginaAdmin)
