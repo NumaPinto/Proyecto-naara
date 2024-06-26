@@ -107,16 +107,34 @@
     
 })(jQuery);
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Selector de fecha
-        const dateInput = document.querySelector('input[type="date"]');
-        dateInput.addEventListener('focus', function() {
-            this.setAttribute('type', 'date');
-        });
+    class DateTimePicker {
+        constructor(dateSelector, timeSelector) {
+            this.dateInput = document.querySelector(dateSelector);
+            this.timeInput = document.querySelector(timeSelector);
+            this.init();
+        }
 
-        // Selector de hora
-        const timeInput = document.querySelector('input[type="time"]');
-        timeInput.addEventListener('focus', function() {
-            this.setAttribute('type', 'time');
-        });
+        init() {
+            if (this.dateInput) {
+                this.dateInput.addEventListener('focus', () => this.showDatePicker());
+            }
+
+            if (this.timeInput) {
+                this.timeInput.addEventListener('focus', () => this.showTimePicker());
+            }
+        }
+
+        showDatePicker() {
+            this.dateInput.setAttribute('type', 'date');
+        }
+
+        showTimePicker() {
+            this.timeInput.setAttribute('type', 'time');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new DateTimePicker('input[type="date"]', 'input[type="time"]');
     });
+
+
