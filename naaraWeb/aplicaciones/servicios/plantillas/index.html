@@ -28,22 +28,7 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <link href="{% static 'css/estilos.css' %}" rel="stylesheet">
     
-   <!-- Tempus Dominus CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempus-dominus/5.39.0/css/tempus-dominus.min.css" />
-
-<!-- Tempus Dominus JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tempus-dominus/5.39.0/js/tempus-dominus.min.js"></script>
-
-<!-- Moment.js (dependency for Tempus Dominus) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-
-<!-- jQuery (if not already included) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Bootstrap 4 (if not already included) -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+   
 
 </head>
 
@@ -281,39 +266,7 @@
             <div class="col-lg-6 py-5">
                 <div class="p-5 my-5" style="background: rgba(33, 30, 28, 0.7);">
                     <h1 id ="ordernar_cita" class="text-white text-center mb-4">Agendar Cita</h1>
-     <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker({
-            format: 'L',  // Formato para la fecha
-            icons: {
-                time: 'fa fa-clock',
-                date: 'fa fa-calendar',
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-calendar-check',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            }
-        });
-        $('#datetimepicker2').datetimepicker({
-            format: 'LT',  // Formato para la hora
-            icons: {
-                time: 'fa fa-clock',
-                date: 'fa fa-calendar',
-                up: 'fa fa-chevron-up',
-                down: 'fa fa-chevron-down',
-                previous: 'fa fa-chevron-left',
-                next: 'fa fa-chevron-right',
-                today: 'fa fa-calendar-check',
-                clear: 'fa fa-trash',
-                close: 'fa fa-times'
-            }
-        });
-    });
-</script>
-
+     
                       <form method="post">
                         {% csrf_token %} <div class="form-row">
                           <div class="col-sm-6">
