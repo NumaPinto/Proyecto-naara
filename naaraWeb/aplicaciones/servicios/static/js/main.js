@@ -107,3 +107,16 @@
     
 })(jQuery);
 
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selector de fecha
+        const dateInput = document.querySelector('input[type="date"]');
+        dateInput.addEventListener('focus', function() {
+            this.setAttribute('type', 'date');
+        });
+
+        // Selector de hora
+        const timeInput = document.querySelector('input[type="time"]');
+        timeInput.addEventListener('focus', function() {
+            this.setAttribute('type', 'time');
+        });
+    });
