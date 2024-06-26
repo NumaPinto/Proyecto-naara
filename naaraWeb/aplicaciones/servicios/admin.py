@@ -79,15 +79,34 @@ class CitasAdmin(ImportExportModelAdmin,admin.ModelAdmin):
     search_fields = ['nombre','correo']
     resource_class = CitasResource
 
+class ProductoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('nombre_producto','descripcion_producto','precio_producto','cantidad_disponible_producto','estado','fecha_de_creacion')
+    search_fields = ['nombre_producto','precio_producto']
+    resource_class = ProductoResource
+    
+class PlanesAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('nombre_plan','descripcion_plan','precio_plan','estado','fecha_de_creacion')
+    search_fields = ['nombre_plan','precio_plan']
+    resource_class = PlanesResource
+
+class ReservaAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('nombre_cliente','fecha','telefono_cliente','correo_cliente','estado','fecha_de_creacion')
+    search_fields = ['nombre_cliente','fecha']
+    resource_class = ReservaResource
+
+class ClienteAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('nombre_cliente','apellido_cliente','telefono_cliente','correo_cliente','estado','fecha_de_creacion')
+    search_fields = ['nombre_cliente','apellido_cliente','telefono_cliente','correo_cliente']
+    resource_class = ClienteResource
 
 
 admin.site.register(Servicio,ServicioAdmin) 
-admin.site.register(Producto)
-admin.site.register(Reserva)
-admin.site.register(Cliente)
+admin.site.register(Producto,PaginaAdmin)
+admin.site.register(Reserva,ReservaAdmin)
+admin.site.register(Cliente,ClienteAdmin)
 admin.site.register(InformacionPagina,InformacionPaginaAdmin)
 admin.site.register(Especialistas,EspecialistasAdmin)
-admin.site.register(Planes)
+admin.site.register(Planes,PlanesAdmin)
 admin.site.register(Citas,CitasAdmin)
 admin.site.register(Suscriptor,SuscriptorAdmin)
 admin.site.register(Contactanos,ContactanosAdmin)
