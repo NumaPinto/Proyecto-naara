@@ -6,7 +6,7 @@ class Servicio(ModeloBase):
     nombre_servicio = models.CharField("Nombre del Servicio",max_length=100)
     descripcion_servicio = models.TextField("Descripción del Servicio")
     precio_servicio = models.DecimalField("Precio del Servicio",max_digits=10, decimal_places=2)
-    imagen_servicio = models.ImageField("Imagen del Servicio",upload_to="servicios/imagenes/servicios/", blank=True, null=True)
+    imagen_servicio = models.ImageField("Imagen del Servicio",upload_to="servicios/imagenes/servicios/", blank=False, null=False)
     
     class Meta:
       verbose_name="Servicio"
@@ -21,7 +21,7 @@ class Producto(ModeloBase):
     descripcion_producto = models.TextField("Descripción del Producto")
     precio_producto = models.DecimalField("Precio del Producto",max_digits=10, decimal_places=2)
     cantidad_disponible_producto = models.PositiveIntegerField("Cantidad de Productos")
-    imagen_producto = models.ImageField("Imagen del Producto",upload_to="servicios/imagenes/productos/", blank=True, null=True)
+    imagen_producto = models.ImageField("Imagen del Producto",upload_to="servicios/imagenes/productos/", blank=False, null=False)
     
     class Meta:
       verbose_name="Producto"
@@ -34,9 +34,14 @@ class Producto(ModeloBase):
 '''Modelo que se encarga de registrar los planes disponibles que ofrece la empresa'''
 class Planes(ModeloBase):
     nombre_plan = models.CharField("Nombre del Plan",max_length=100)
-    descripcion_plan = models.TextField("Descripción del Plan")
+    descripcion_plan = models.TextField("Descripción General del Plan")
     precio_plan = models.DecimalField("Precio del Plan",max_digits=10, decimal_places=2)
-    
+    descripcion_plan_I = models.CharField("Descripción 1",max_length =200, blank=True,null=True)
+    descripcion_plan_II = models.CharField("Descripción 2",max_length =200, blank=True,null=True)
+    descripcion_plan_III = models.CharField("Descripción 3",max_length =200, blank=True,null=True)
+    descripcion_plan_IV = models.CharField("Descripción 4",max_length =200, blank=True,null=True)
+    descripcion_plan_V = models.CharField("Descripción 5",max_length =200, blank=True,null=True)
+
     class Meta:
       verbose_name="Plan"
       verbose_name_plural="Planes"

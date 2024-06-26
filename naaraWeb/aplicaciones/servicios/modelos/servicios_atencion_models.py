@@ -8,7 +8,7 @@ class Especialistas(ModeloBase):
     especialidad_especialista = models.CharField("Especialidad",max_length=100)
     telefono_especialista = models.CharField("Teléfono",max_length=15)
     correo_especialista = models.EmailField("Correo")
-    foto_especialista= models.ImageField("Foto",upload_to="servicios/fotos/especialistas/", blank=True, null=True)
+    foto_especialista= models.ImageField("Foto",upload_to="servicios/fotos/especialistas/", blank=False, null=False)
     web =models.URLField("Pagina Web", null=True,blank=True)
     facebook =models.URLField("Facebook", null=True,blank=True)
     instagram =models.URLField("Instagram", null=True,blank=True)
