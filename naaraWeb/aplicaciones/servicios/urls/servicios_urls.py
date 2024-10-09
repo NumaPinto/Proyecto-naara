@@ -20,6 +20,7 @@ from aplicaciones.servicios.vistas.servicios_equipo_views import TeamView
 from aplicaciones.servicios.vistas.servicios_inicio_views import InicioView
 from aplicaciones.servicios.vistas.servicios_nosotros_views import AboutView, ContactView, SuscribirView, ContactarView
 from aplicaciones.servicios.vistas.servicios_ventas_views import PriceView, AppointmentView, ServicioListView, ProductoListView
+from aplicaciones.servicios.apis.servicios_ventas_apis import ServicioListCreateView
 
 urlpatterns = [
 
@@ -50,4 +51,5 @@ urlpatterns = [
     path('suscribirse/',SuscribirView.as_view(), name = 'suscribirse'),
     
     path('contactanos/',ContactarView.as_view(), name = 'contactanos'),
+    path('serviciosapi/', ServicioListCreateView.as_view(), name='servicio-list-create'),
 ]
